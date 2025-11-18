@@ -3,7 +3,7 @@ import { Router } from "express";
 const router = Router();
 
 import { validateId } from "../middlewares/middlewares.js";
-import { createProduct, getAllProducts, getProductById, modifyProduct, removeProduct } from "../controllers/products.controllers.js";
+import { createProduct, getAllProducts, getProductById, modifyProduct, removeProduct } from "../controllers/product.controllers.js";
 
 
 router.get("/", getAllProducts); // GET -> trae todo
