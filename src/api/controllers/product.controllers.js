@@ -1,9 +1,9 @@
-/*import productModels from "../models/product.models.js";
+import productModels from "../models/product.models.js";
 // controlador
 // GET -> trae todo
-export const getAllProducts = async (req, res) => {
+export const traerTodosLosProductos = async (req, res) => {
     try{
-        const [rows] = await productModels.selectAllProducts();
+        const [rows] = await productModels.seleccionarTodosProductos();
 
         res.status(200).json({
             payload: rows,
@@ -19,12 +19,12 @@ export const getAllProducts = async (req, res) => {
 };
 
 // get product by id
-export const getProductById = async (req,res) => {
+export const traerProductosPorId = async (req,res) => {
     try{
         let { id } = req.params; //el valor numerico 
         
         // optimizacion 1 - validacion parametros
-        const [rows] = await  productModels.selectProductWhereId(id);
+        const [rows] = await  productModels.seleccionarProductosPorId(id);
         
         // optimizacion 2
         if(rows.length === 0){
@@ -47,19 +47,19 @@ export const getProductById = async (req,res) => {
 };
 
 // POST - crear producto
-export const createProduct = async (req,res) => {
+export const crearProducto = async (req,res) => {
     try{
-        const {nombre, categoria, imagen, precio} = req.body;
+        const {nombre, precio, imagen, categoria} = req.body;
         console.log(req.body);
 
         //optimizacion 1 - 
-        if(!nombre || !categoria || !imagen || !precio){
+        if(!nombre || !precio || !imagen || !categoria){
             //el endpoint termina en el return y el usuario lo recibe
             return res.status(400).json({
                 message: "Datos invalidos, asegurate de enviar todos los campos del formulario"
             });
         }
-        let [rows] = await productModels.insertProduct(nombre, categoria, imagen, precio);
+        let [rows] = await productModels.insertarProducto(nombre, precio, imagen, categoria);
         
         res.status(201).json({
             message: "producto creado con exito",
@@ -76,17 +76,17 @@ export const createProduct = async (req,res) => {
 };
 
 // PUT - actualizar producto
-export const modifyProduct = async (req, res) => {
+export const actualizarProducto = async (req, res) => {
     try {
-        let {id, nombre, categoria, imagen, precio, active} = req.body;
+        let {id, nombre, precio, imagen, categoria, activo} = req.body;
         
         // optimizacion 1 - valdiacion basica de datos
-        if(!nombre || !categoria || !imagen || !precio || !active){
+        if(!nombre || !precio || !imagen || !categoria || !activo){
             return res.status(400).json({
                 message: "Faltan campos requeridos"
             });
         }
-        let [result] = await productModels.updateProduct(nombre, categoria, imagen, precio, id);
+        let [result] = await productModels.actualizarProducto(nombre, precio, imagen, categoria, id);
         // optimizacion 2  - que se actualziara el prod
         if(result.affectedRows === 0){
             return res.status(400).json({
@@ -109,10 +109,10 @@ export const modifyProduct = async (req, res) => {
 };
 
 // DELETE - eliminar producto
-export const removeProduct = async (req,res) => {
+export const eliminarProducto = async (req,res) => {
     try{
         let { id } = req.params;
-        let [result] = await productModels.deleteProduct(id);
+        let [result] = await productModels.eliminarProducto(id);
 
         // optimizacion 1 ->validar id
         // optimizacion 2
@@ -132,4 +132,4 @@ export const removeProduct = async (req,res) => {
         })
 
     }
-};*/
+};

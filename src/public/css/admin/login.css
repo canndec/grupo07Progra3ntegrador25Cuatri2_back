@@ -1,0 +1,22 @@
+#entradaLogin {
+    padding: 40px 20px;
+    background-color: var(--violetaTransparente);
+    flex-wrap: wrap;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px; /**/
+}
+
+#inputEmail, #inputContrasenia {
+    width: 75%;
+    padding: 15px;
+    border-radius: 40px;
+    border-color: grey;
+    margin-bottom: 20px;
+    font-family: "Press Start 2P", cursive;
+    font-size: smaller;
+    border: none;
+}
