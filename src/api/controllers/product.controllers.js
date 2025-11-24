@@ -1,4 +1,4 @@
-import productModels from "../models/product.models.js";
+/*import productModels from "../models/product.models.js";
 // controlador
 // GET -> trae todo
 export const getAllProducts = async (req, res) => {
@@ -132,4 +132,4 @@ export const removeProduct = async (req,res) => {
         })
 
     }
-};
+};*/
