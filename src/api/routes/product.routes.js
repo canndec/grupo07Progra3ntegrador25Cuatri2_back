@@ -1,15 +1,18 @@
 //middleware router
-/*import { Router } from "express";
+import { Router } from "express";
 const router = Router();
 
+
 import { validateId } from "../middlewares/middlewares.js";
-import { createProduct, getAllProducts, getProductById, modifyProduct, removeProduct } from "../controllers/product.controllers.js";
+import {traerTodosLosProductos, traerProductosPorId, crearProducto, actualizarProducto, eliminarProducto} from "../controllers/product.controllers.js";
 
 
-router.get("/", getAllProducts); // GET -> trae todo
-router.get("/:id",validateId, getProductById ); // get product by id
-router.post("/", createProduct); // POST - crear producto
-router.put("/", modifyProduct); // PUT - actualizar producto
-router.delete("/:id", validateId, removeProduct); // DELETE - eliminar producto
 
-export default router; //exportar todas las rutas*/
+
+router.get("/", traerTodosLosProductos); // GET -> trae todo
+router.get("/:id",validateId, traerProductosPorId ); // get product by id
+router.post("/", crearProducto); // POST - crear producto
+router.put("/", actualizarProducto); // PUT - actualizar producto
+router.delete("/:id", validateId, eliminarProducto); // DELETE - eliminar producto
+
+export default router; //exportar todas las rutas
