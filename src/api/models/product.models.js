@@ -1,5 +1,5 @@
 //modelos productos 
-import connection from "../database/db.js";
+/*import connection from "../database/db.js";
 
 //que la variable trenga el mismo que la sentencia
 
@@ -42,4 +42,4 @@ export default {
     insertProduct,
     updateProduct,
     deleteProduct
-}
+}*/

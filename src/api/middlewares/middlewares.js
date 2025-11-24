@@ -1,5 +1,5 @@
 // middlewares de aplicacion logger -> por consola traer cada peticion que se produjo  -> se aplica a todas las peticiones y respuestas 
-const loggerUrl = (req,res,next) => {
+/*const loggerUrl = (req,res,next) => {
     console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`)
     next(); //NECESARIO         
 };
@@ -20,4 +20,4 @@ const validateId = (req,res,next) => {
 export {
     loggerUrl,
     validateId
-}
+}*/

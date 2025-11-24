@@ -1,5 +1,5 @@
 //middleware router
-import { Router } from "express";
+/*import { Router } from "express";
 const router = Router();
 
 import { validateId } from "../middlewares/middlewares.js";
@@ -12,4 +12,4 @@ router.post("/", createProduct); // POST - crear producto
 router.put("/", modifyProduct); // PUT - actualizar producto
 router.delete("/:id", validateId, removeProduct); // DELETE - eliminar producto
 
-export default router; //exportar todas las rutas
+export default router; //exportar todas las rutas*/
