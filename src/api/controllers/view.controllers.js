@@ -6,12 +6,13 @@ import ProductModels from "../models/product.models.js";
 export const productsView = async (req,res) =>{
     try {
         const [rows] = await ProductModels.seleccionarTodosProductos();
-        res.render("loginCliente", {
-            titulo: "inicio",
-            sobre: "Bienvenido",
-            css : "/cliente/login.css",
+        res.render("productosAdmin", {
+            titulo: "Listado De ¨Productos",
+            sobre: "todos los productos",
+            css : "admin/productos.css",
             productos: rows
-        });
+        }); 
+        //con products puedo acceder <%= productos.foreach %> para recorrer y agarrar ej: productos.id
     } catch(error) {
         console.error(error);
     }
