@@ -21,6 +21,7 @@ import { productRoutes, viewRoutes } from "./src/api/routes/index.js";
 //incorpora la configuacion en el index.js
 import {__dirname, join} from "./src/api/utils/index.js";
 
+
 //import session from "express-session";
 
 
@@ -51,6 +52,7 @@ app.set("views", join(__dirname,"src/views")); //vistas servidas desde la carpet
 // ## RUTAS         
 app.use("/api/productos", productRoutes); //ruta de producto
 app.use("/",viewRoutes);//rutas vista
+
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);
