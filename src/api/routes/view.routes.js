@@ -4,7 +4,16 @@ const router = Router();
 
 //por middleware router, todas las peticiones van al modulos productRoutes que las maneja
 
-router.get("/", productsView); //logincliente como principal
+router.get("/productosAdmin", productsView); //productosAdmin trae odo
+
+router.get("/", (req, res) => {
+    res.render("loginCliente", {
+        titulo: "login de cliente",
+        sobre: "Bienvenido",
+        css: "cliente/login.css"
+    }); //seusa como principal
+});
+
 
 router.get("/loginAdmin", (req,res) => {
     res.render("loginAdmin", {
@@ -12,7 +21,7 @@ router.get("/loginAdmin", (req,res) => {
         sobre: "entrar como administrador",
         css: "admin/login.css"
     })
-})
+}); //vista del login admin
 
 router.get("/consultar", (req,res) => {
     //falta algo aca

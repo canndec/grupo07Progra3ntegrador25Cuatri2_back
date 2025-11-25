@@ -22,7 +22,7 @@ formulario.addEventListener("submit", function (event) {
     alert("Ingrese un nombre correcto");
     return;
 }*/
-    event.preventDefault();
+    /*event.preventDefault();
     console.log("Submit detectado");
 
     let nombreIngresado = inputNombre.value.trim(); //para eliminar espacios raros, sino los toma como caracter
@@ -32,8 +32,8 @@ formulario.addEventListener("submit", function (event) {
     }
     console.log("Guardando nombre:", nombreIngresado);
     localStorage.setItem("nombreDeCliente", nombreIngresado); //guardado en localStorage para usarse despues
-    alert("Bienvenido admi", nombreIngresado);
-    location.href = "productos.html";
+    alert("Bienvenido admi", nombreIngresado);*/
+    //location.href = "/productosAdmin";
 });
 
 botonCliente.addEventListener("click", function() {;
