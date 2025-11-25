@@ -1,0 +1,161 @@
+:root {
+    --violetaPrincipal :rgb(100, 47, 150);
+    --violetaClaro: rgb(157, 121, 241);
+    --violetaOscuro:  #5e319d; /*LO QUE ES LA TECNOLOGIA*/
+    --violetaTransparente : rgba(100, 47, 150, 0.692);
+
+    --fondoModoOscuro: rgb(25, 9, 36);
+    --violetaModoOscuro: rgb(45, 4, 71);
+}
+/*
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, p, #botonConsolas, #botonJuegos, #botonTodo {
+    font-size:smaller;
+    color: white;
+    font-family: "Press Start 2P", cursive;
+}
+header {
+    background-color:var(--violetaTransparente);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /*padding: 10px 20px;
+}
+.logoConNombre {
+    width: 150px;
+    margin: 8px 20px;
+}
+.botonTema {
+    margin: 20px 40px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.botonTema img{
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+}*/
+/*productos header*/
+#inputFiltro{
+    height: 20px;
+    border-radius: 5px;
+    padding: 8px;
+    /*margin-top: 15px;*/
+}
+
+
+main {
+    flex: 1;
+    display: flex;           
+    justify-content: center; 
+    align-items: flex-start; /*para centrar vertical*/
+    
+}/*
+#contenedorLogin {
+    display: flex;
+    flex-direction: column;
+}*/
+#entradaLogin {
+    background-color: var(--violetaTransparente);
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 150px;
+    border-radius: 20px;
+}
+#entradaLogin h1, #entradaLogin h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+#inputNombre {
+    width: 80%;
+    padding: 15px;
+    border-radius: 40px;
+    border-color: grey;
+    margin-bottom: 20px;
+    font-family: "Press Start 2P", cursive;
+    font-size: smaller;
+    border: none;
+}
+
+#botonAdmin {
+    padding: 10px;
+    margin-top: 20px;
+
+    background-color:var(--violetaTransparente);
+    color: var(--violetaPrincipal);
+    border-radius: 20px;
+    font-family: "Press Start 2P", cursive;
+    cursor: pointer;
+    border: none;
+}
+#botonContinuar {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: "Press Start 2P", cursive;
+    font-size: smaller;
+}
+/*
+footer {
+    background-color: var(--violetaTransparente);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.logoFooter {
+    width: 25px;
+    padding-right: 10px;
+    filter: invert(100%);
+}*/
+
+/*modo oscuro*/
+/*
+body.temaOscuro {
+    background-color: var(--fondoModoOscuro);
+}*/
+.temaOscuro #entradaLogin {
+    background-color: var(--violetaModoOscuro);    
+}
+.temaOscuro #formIngreso{
+    filter: invert(100%);
+}
+.temaOscuro #botonAdmin {
+    color: white;
+    background-color: black;
+}
+/*
+.temaOscuro footer p{
+    filter: invert(100%);
+}
+
+.temaOscuro .logoFooter{
+    filter: invert(0%); /*vuelve a su color normal que antes ya fue modificado
+}
+.temaOscuro .botonTema img {
+    filter: invert(0%);
+}
+*/

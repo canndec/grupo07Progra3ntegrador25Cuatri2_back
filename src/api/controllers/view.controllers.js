@@ -6,12 +6,15 @@ import ProductModels from "../models/product.models.js";
 export const productsView = async (req,res) =>{
     try {
         const [rows] = await ProductModels.seleccionarTodosProductos();
-        res.render("index", {
+        res.render("loginCliente", {
             titulo: "inicio",
-            sobre: "listado principal",
+            sobre: "Bienvenido",
+            css : "/cliente/login.css",
             productos: rows
         });
     } catch(error) {
         console.error(error);
     }
 }
+
+// se usa como principal el login de cliente y de ahi se redirecciona y todo funciona clean

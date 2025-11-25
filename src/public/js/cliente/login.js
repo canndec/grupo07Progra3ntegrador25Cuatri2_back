@@ -1,14 +1,8 @@
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-//  SOLO ESTA LA VISTA EN PAUSA, NO FUNCIONA 
-// TIENE LA MISMA VALIDACION QUE LOGIN DE CLIENTE PORQ FALTA LO DE LA ULTIMA CLASE, Y LA CONTRASEÑA E EMAIL Y ESO
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 
 let formulario = document.getElementById("formIngreso"); //del login el nombre
-let inputEmail = document.getElementById("inputEmail"); //email ingresado
-let inputContrasenia = document.getElementById("inputContrasenia"); //contra ingresada
-let botonCliente = document.getElementById("botonCliente"); //redioreccionar a cliente
+let inputNombre = document.getElementById("inputNombre"); //nombre ingresado
 
+let botonAdmin = document.getElementById("botonAdmin"); //para pasar a la otra pestaña
 
 formulario.addEventListener("submit", function (event) {
 /**
@@ -32,12 +26,11 @@ formulario.addEventListener("submit", function (event) {
     }
     console.log("Guardando nombre:", nombreIngresado);
     localStorage.setItem("nombreDeCliente", nombreIngresado); //guardado en localStorage para usarse despues
-    alert("Bienvenido admi", nombreIngresado);
-    location.href = "productos.html";
+    location.href = "productos.html"; // /productos -> y redirecciona al ejs que ya esta renderizado
 });
 
-botonCliente.addEventListener("click", function() {;
-    location.href = "/";
+botonAdmin.addEventListener("click", function() {
+    location.href = "/loginAdmin";
 });
 
 function validarCaracteresInput(nombreIngresado){
