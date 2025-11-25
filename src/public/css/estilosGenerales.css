@@ -1,0 +1,100 @@
+/*  
+    ACA VAN A ESTAR OS GENERALES GENERALES, FOOTER, NAV , ROOT CON VARIABLES
+*/
+
+:root {
+    --violetaPrincipal :rgb(100, 47, 150);
+    --violetaClaro: rgb(157, 121, 241);
+    --violetaOscuro:  #5e319d; /*LO QUE ES LA TECNOLOGIA*/
+    --violetaTransparente : rgba(100, 47, 150, 0.692); /*ESTE ES EL QUE SE USA SIEMPRE*/
+    --grisVioleta: rgb(208, 189, 219);
+
+    --rojoBorrar: rgb(255, 0, 0);
+    --rojoVaciar: rgb(255, 78, 78);
+    --rojoVaciarFuerte: rgb(240, 40, 40);
+    --verdeFinalizar:  rgb(48, 160, 48);
+    --verdeClaro: rgb(71, 196, 71);
+    
+    /*modo oscuro*/
+    --fondoModoOscuro: rgb(25, 9, 36);
+    --violetaModoOscuro: rgb(45, 4, 71);
+    --verdeOscuro: rgb(28, 175, 28);
+    --rojoModoOscuro: rgb(94, 11, 11);
+    --verdeModoOscuro: rgb(24, 107, 24);
+
+    /*esto es de ticket*/
+    --celesteClaro:  rgb(161, 227, 247);
+    --violetaFinalizar: rgb(85, 85, 177);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+html, body {
+    height: 100%;
+}
+body {
+    font-family: "Press Start 2P", cursive;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+}
+
+body.temaOscuro {
+    background-color: var(--fondoModoOscuro);
+}
+
+/*barra alta de header*/
+header {
+    background-color:var(--violetaTransparente);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /*padding: 10px 20px;*/
+}
+.logoConNombre {
+    width: 150px;
+    margin: 8px 20px;
+}
+.botonTema {
+    margin: 20px 40px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.botonTema img{
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+}
+
+
+/*FOOTER*/
+
+footer {
+    background-color: var(--violetaTransparente);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+.logoFooter {
+    width: 25px;
+    padding-right: 10px;
+    filter: invert(100%);
+}
+
+.temaOscuro footer p{
+    filter: invert(100%);
+}
+
+.temaOscuro .logoFooter{
+    filter: invert(0%); /*vuelve a su color normal que antes ya fue modificado*/
+}
+.temaOscuro .botonTema img {
+    filter: invert(0%);
+}

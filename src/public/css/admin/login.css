@@ -1,0 +1,58 @@
+main {
+    flex: 1;
+    display: flex;           
+    justify-content: center; 
+    align-items: flex-start; /*para centrar vertical*/
+    
+}
+
+
+#entradaLogin {
+    padding: 40px 20px;
+    background-color: var(--violetaTransparente);
+    flex-wrap: wrap;
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px; /**/
+    border-radius: 20px;
+}
+
+#entradaLogin h1 {
+    font-size: small;
+    color: white;
+    
+}
+#inputEmail, #inputContrasenia {
+    margin: 10px;
+    width: 75%;
+    padding: 15px;
+    border-radius: 40px;
+    border-color: grey;
+    margin-bottom: 20px;
+    font-family: "Press Start 2P", cursive;
+    font-size: smaller;
+    border: none;
+}
+#botonContinuar {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: "Press Start 2P", cursive;
+    font-size: smaller;
+}
+
+#botonCliente {
+    padding: 10px;
+    margin-top: 20px;
+
+    background-color:var(--violetaTransparente);
+    color: var(--violetaPrincipal);
+    border-radius: 20px;
+    font-family: "Press Start 2P", cursive;
+    cursor: pointer;
+    border: none;
+}

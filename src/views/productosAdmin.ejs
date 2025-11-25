@@ -1,0 +1,25 @@
+<%- include("partials/head.ejs") %>
+<%- include("partials/header.ejs") %>
+
+<main>
+    <section class="contenedorPrincipal">
+        <h1 id="tituloPrincipal">Productos de la tienda JoyStiq</h1>
+
+        <div id="botonesFiltroProd">
+            <button id="botonConsolas">CONSOLAS</button>
+            <button id="botonJuegos">JUEGOS</button>
+            <button id="botonTodo">TODOS</button>
+        </div>
+
+        <section class="contenedorProductos">
+            <div id="gridProductos"><!-- cartaProd --></div>
+        </section>
+
+        <div class="contenedorBotones">
+            <button id="botonAtras"><img src="img/atras.png" alt="atras" /></button>
+            <button id="botonSiguiente"><img src="img/adelante.png" alt="siguiente" /></button>
+        </div>
+</main>
+<%- include("partials/footer.ejs") %>
+</body>
+</html>
