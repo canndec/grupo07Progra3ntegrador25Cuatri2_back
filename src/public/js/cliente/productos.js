@@ -114,7 +114,7 @@ let cantidadProducto = [];
 
 let botonCarrito = document.getElementById("botonCarrito");
 botonCarrito.addEventListener("click", () => {
-    window.location.href = "carrito.html"; //cambia de vista
+    window.location.href = "/carritoCliente"; //cambia de vista
 });
 
 function agregarACarrito(id,  activo) {
