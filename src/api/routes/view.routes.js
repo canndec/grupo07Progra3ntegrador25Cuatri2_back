@@ -1,13 +1,13 @@
 import { Router } from "express";
 import {productsView } from "../controllers/view.controllers.js"; //controlador de prod
-import {productosClienteView } from "../controllers/view.controllers.js";
+import {productosClienteView } from "../controllers/view.controllers.js"; // controlador vista cliente
 
 const router = Router();
 
 //por middleware router, todas las peticiones van al modulos productRoutes que las maneja
 
 router.get("/productosAdmin", productsView); //productosAdmin trae odo
-router.get("/productosCliente", productosClienteView); 
+router.get("/productosCliente", productosClienteView);  // vista productos cliente
 
 
 router.get("/", (req, res) => {

@@ -29,7 +29,7 @@ export const productosClienteView = async (req, res) => {
         console.error("Error al cargar la vista de productos del cliente:", error);
         res.status(500).send("Error interno del servidor al cargar la vista.");
     }
-};
+}; ///CREE UNA VISTA ESPECIFICA PARA EL CLIENTE
 
 // se usa como principal el login de cliente y de ahi se redirecciona y todo funciona clean
 

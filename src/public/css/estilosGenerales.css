@@ -42,6 +42,10 @@ body {
     flex-direction: column;
 }
 
+main {
+    flex: 1; /*EL FOOTER PEGADO AL PISO*/
+}
+
 body.temaOscuro {
     background-color: var(--fondoModoOscuro);
 }

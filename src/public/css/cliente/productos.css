@@ -1,10 +1,11 @@
 /*productos*/
 /*header*/
 
-#nombreDeCliente {
+#nombreCliente {
     font-size: small;
     color: white;
     font-family: "Press Start 2P", cursive;
+    
 }
 
 .contenedorPrincipal {
@@ -23,12 +24,15 @@
 }
 
 #botonConsolas, #botonJuegos, #botonTodo {
+    font-size:small;
+    font-family: "Press Start 2P", cursive;
     margin: 10px;
     padding: 7px;
     padding-inline: 20px;
     background-color: var(--violetaTransparente);
     border: none;
     border-radius: 10px;
+    color: white;
     cursor: pointer; /*cambia el logito del mouse*/
 }
 .buscador {
@@ -53,6 +57,7 @@
     align-items: center;      
     justify-content: center;  
 }
+ 
 
 #inputFiltro {
     width: 100%;
@@ -80,8 +85,10 @@
     border-color: var(--violetaClaro);
     box-shadow: 0 0 8px var(--violetaClaro);
 }
-
-
+ #tituloPrincipal {
+    font-size: small;
+    margin-top: 30px
+}
 
 #gridProductos {
 /*contenedor de las cartas*/
@@ -141,7 +148,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
+    color: white;
     width: 220px;
     height: 280px; /* FIJE EL BOTON ME ESTRESABA QUE SE MUEVA DEPENDE EL PRODUCTO ATT:SANTI */
 }
@@ -149,6 +156,7 @@
     font-size:small;
     padding: 5px;
     font-family: "Lexend Exa", sans-serif;
+    color: white;
 } 
 
 
