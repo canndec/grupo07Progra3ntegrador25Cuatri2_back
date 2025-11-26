@@ -1,22 +1,31 @@
 import { Router } from "express";
-import {productsView } from "../controllers/view.controllers.js"; //controlador de prod
-import {productosClienteView } from "../controllers/view.controllers.js"; // controlador vista cliente
+import {
+
+    carritoCliente, /// VISATA CARRITO CLIENTE
+    productsView, /// VISTA PRODUCTOS ADMIN
+    productosClienteView, /// VISTA PRODUCTOS CLIENTE
+    ticketCliente /// VISTA TICKET CLIENTE
+} from "../controllers/view.controllers.js";
 
 const router = Router();
 
 //por middleware router, todas las peticiones van al modulos productRoutes que las maneja
 
-router.get("/productosAdmin", productsView); //productosAdmin trae odo
-router.get("/productosCliente", productosClienteView);  // vista productos cliente
-
+///////////////////////////////////////////////CLIENTE//////////////////////////////////////////
 
 router.get("/", (req, res) => {
     res.render("loginCliente", {
         titulo: "login de cliente",
         sobre: "Bienvenido",
         css: "cliente/login.css"
-    }); //seusa como principal
-});
+    }); 
+}); //vista del login cliente
+
+router.get("/productosCliente", productosClienteView);  // vista productos cliente
+router.get("/ticketCliente", ticketCliente); //vista ticket cliente
+router.get("/carritoCliente", carritoCliente); //vista carrito cliente
+
+////////////////////////////////////////////ADMIN////////////////////////////////////////////////
 
 router.get("/loginAdmin", (req,res) => {
     res.render("loginAdmin", {
@@ -25,6 +34,8 @@ router.get("/loginAdmin", (req,res) => {
         css: "admin/login.css"
     })
 }); //vista del login admin
+
+router.get("/productosAdmin", productsView); //productosAdmin trae odo
 
 router.get("/consultar", (req,res) => {
     //falta algo aca
