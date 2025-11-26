@@ -33,7 +33,8 @@ formulario.addEventListener("submit", function (event) {
     console.log("Guardando nombre:", nombreIngresado);
     localStorage.setItem("nombreDeCliente", nombreIngresado); //guardado en localStorage para usarse despues
     alert("Bienvenido admi", nombreIngresado);*/
-    //location.href = "/productosAdmin";
+    alert("Bienvenido, redireccionado")
+    location.href = "/productosAdmin";
 });
 
 botonCliente.addEventListener("click", function() {;

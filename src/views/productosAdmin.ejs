@@ -2,24 +2,39 @@
 <%- include("partials/header.ejs") %>
 
 <main>
-    <section class="contenedorPrincipal">
-        <h1 id="tituloPrincipal">Productos de la tienda JoyStiq</h1>
+    <div class="contenedorSections">
+        
+        <aside class="contenedorMenu">
+            <section class="contenedorBotonesGestion">
+                <button id="tituloPrincipal">Panel de gestion <img id ="flechaAbajo"src="img/flechaAbajo.png" alt="flechaabajo"></button>
+                <div id="desplegableBotonesGestion" class="oculto">
+                    <button id="botonCrear">Crear Productos</button>
+                    <button id="botonModificar">Modificar productos</button>
+                    <button id="botonEliminar">Eliminar productos</button>
+                </div>
+            </section>
+        </aside>
 
-        <div id="botonesFiltroProd">
-            <button id="botonConsolas">CONSOLAS</button>
-            <button id="botonJuegos">JUEGOS</button>
-            <button id="botonTodo">TODOS</button>
-        </div>
-
-        <section class="contenedorProductos">
-            <div id="gridProductos"><!-- cartaProd --></div>
+        <section class="contenedorPrincipal">    
+            <div id="botonesFiltroProd">
+                <button id="botonConsolas">CONSOLAS</button>
+                <button id="botonJuegos">JUEGOS</button>
+                <button id="botonTodo">TODOS</button>
+                <input id="inputConsulta" type="number" min=0 placeholder="Consulta por id...">
+            </div>
+            
+            <section class="contenedorProductos">
+                <div id="gridProductos"><!-- cartaProd --></div>
+            </section>
+            
+            <div class="contenedorBotones">
+                <button id="botonAtras"><img src="img/atras.png" alt="atras" /></button>
+                <button id="botonSiguiente"><img src="img/adelante.png" alt="siguiente" /></button>
+            </div>
         </section>
-
-        <div class="contenedorBotones">
-            <button id="botonAtras"><img src="img/atras.png" alt="atras" /></button>
-            <button id="botonSiguiente"><img src="img/adelante.png" alt="siguiente" /></button>
-        </div>
-</main>
+    </div>
+    </main>
 <%- include("partials/footer.ejs") %>
+<script defer src="/js/admin/productos.js"></script>
 </body>
 </html>

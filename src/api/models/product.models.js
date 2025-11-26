@@ -21,19 +21,20 @@ const insertarProducto = (nombre, categoria, imagen, precio) => {
     return connection.query(sql, [nombre, precio, imagen, categoria]);
 };
 
-const actualizarProducto = (nombre, precio, imagen, categoria, id) => {
+const actualizarProducto = (nombre, precio, imagen, categoria, activo, id) => {
     let sql = `
             UPDATE productos
-            SET nombre = ?, precio = ?, imagen = ?, categoria = ? 
+            SET nombre = ?, precio = ?, imagen = ?, categoria = ?, activo = ? 
             WHERE id = ? `;
         
-    return connection.query(sql, [nombre, precio, imagen, categoria, id]);
+    return connection.query(sql, [nombre, precio, imagen, categoria, activo, id]);
 };
 
 const eliminarProducto = (id) => {
     let sql = "DELETE FROM productos WHERE id = ?";
     return connection.query(sql,[id]);
-};
+};// CREO QUE TIENE QUE SER UPDATE ACTIVO:0
+
 
 
 export default {
