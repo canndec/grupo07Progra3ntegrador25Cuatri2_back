@@ -18,4 +18,18 @@ export const productsView = async (req,res) =>{
     }
 }
 
+export const productosClienteView = async (req, res) => {
+    try {
+        res.render("productosCliente", {
+            titulo: "Productos",
+            sobre: "Lista de productos disponibles",
+            css: "cliente/productos.css",
+        });
+    } catch (error) {
+        console.error("Error al cargar la vista de productos del cliente:", error);
+        res.status(500).send("Error interno del servidor al cargar la vista.");
+    }
+};
+
 // se usa como principal el login de cliente y de ahi se redirecciona y todo funciona clean
+

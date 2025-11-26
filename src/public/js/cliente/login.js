@@ -26,7 +26,7 @@ formulario.addEventListener("submit", function (event) {
     }
     console.log("Guardando nombre:", nombreIngresado);
     localStorage.setItem("nombreDeCliente", nombreIngresado); //guardado en localStorage para usarse despues
-    location.href = "productos.html"; // /productos -> y redirecciona al ejs que ya esta renderizado
+    location.href = "/productosCliente"; // /productos -> y redirecciona al ejs que ya esta renderizado
 });
 
 botonAdmin.addEventListener("click", function() {

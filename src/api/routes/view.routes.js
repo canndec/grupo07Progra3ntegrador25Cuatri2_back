@@ -1,10 +1,14 @@
 import { Router } from "express";
 import {productsView } from "../controllers/view.controllers.js"; //controlador de prod
+import {productosClienteView } from "../controllers/view.controllers.js";
+
 const router = Router();
 
 //por middleware router, todas las peticiones van al modulos productRoutes que las maneja
 
 router.get("/productosAdmin", productsView); //productosAdmin trae odo
+router.get("/productosCliente", productosClienteView); 
+
 
 router.get("/", (req, res) => {
     res.render("loginCliente", {
@@ -13,7 +17,6 @@ router.get("/", (req, res) => {
         css: "cliente/login.css"
     }); //seusa como principal
 });
-
 
 router.get("/loginAdmin", (req,res) => {
     res.render("loginAdmin", {
