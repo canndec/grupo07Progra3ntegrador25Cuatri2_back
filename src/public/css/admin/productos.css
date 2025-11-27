@@ -18,7 +18,7 @@
     border-radius: 20px;
     margin: 20px 20px;
 }
-#flechaAbajo {
+#flechaMenu {
     padding-left: 7px;
     padding: auto;
     width: 16px;
@@ -31,6 +31,7 @@
 #botonCrear, #botonModificar, #botonEliminar {
     background-color: rgb(214, 177, 238);
     border: 2px solid;
+    cursor: pointer;
 }
 .oculto {
     display: none; 
@@ -57,12 +58,15 @@
     border: none;
     border-radius: 15px;
     cursor: pointer; /*cambia el logito del mouse*/
+    font-family: "Press Start 2P", cursive;
+
 }
 #inputConsulta {
     margin: 0;
     padding: 10px;
     border-radius: 20px;
-    border: none;
+    border-style:ridge;
+    border-color: rgba(47, 3, 88, 0.425);
 }
 
 #gridProductos {
@@ -157,5 +161,13 @@
 
 /**/
 .temaOscuro #inputConsulta {
+    background-color: black;
+    border-color: rgba(255, 255, 255, 0.63);
+}
+.temaOscuro #tituloPrincipal {
+    background-color: var(--violetaTransparente);
+    color: white;
+}
+.temaOscuro #flechaMenu {
     filter: invert(100%);
 }
