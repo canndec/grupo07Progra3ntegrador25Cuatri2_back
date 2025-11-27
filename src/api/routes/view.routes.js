@@ -1,8 +1,11 @@
 import { Router } from "express";
 import {
-
+    consultarAdminView,
+    crearProductoView,
+    modificarAdminView,
+    eliminarAdminView,
     carritoCliente, /// VISATA CARRITO CLIENTE
-    productsView, /// VISTA PRODUCTOS ADMIN
+    productosAdminView, /// VISTA PRODUCTOS ADMIN
     productosClienteView, /// VISTA PRODUCTOS CLIENTE
     ticketCliente /// VISTA TICKET CLIENTE
 } from "../controllers/view.controllers.js";
@@ -29,46 +32,19 @@ router.get("/carritoCliente", carritoCliente); //vista carrito cliente
 
 router.get("/loginAdmin", (req,res) => {
     res.render("loginAdmin", {
-        titulo: "login de administrador",
-        sobre: "entrar como administrador",
+        titulo: "Login administrador",
+        sobre: "Bienvenido al Panel Adminstrador",
         css: "admin/login.css"
     })
 }); //vista del login admin
 
-router.get("/productosAdmin", productsView); //productosAdmin trae odo
+router.get("/productosAdmin", productosAdminView); //productosAdmin trae odo
 
-router.get("/consultar", (req,res) => {
-    //falta algo aca
+router.get("/consultarAdmin", consultarAdminView); //vista consulta
+router.get("/crearAdmin", crearProductoView); //vista crear
 
-    res.render("consultar", {
-        titulo: "Consultar",
-        sobre: "consultar producto por id",
-        css: "consultarAdmin.css"
-    })
-});
+router.get("/modificarAdmin", modificarAdminView); //vista modificar
+router.get("/eliminarAdmin", eliminarAdminView); //vista eliminar
 
-router.get("/crear", (req,res) => {
-    res.render("crear", {
-        titulo: "Crear",
-        sobre: "crear producto",
-        css: "crearAdmin.css"
-    })
-});
-
-router.get("/modificar", (req,res) => {
-    res.render("modificar", {
-        titulo: "Modificar",
-        sobre: "Modificar/actualizar un producto",
-        css:"modificarAdmin.css"
-    })
-});
-
-router.get("/eliminar", (req, res) => {
-    res.render("eliminar", {
-        titulo: "eliminar",
-        sobre: "eliminar un producto",
-        css: "eliminar.css"
-    })
-});
 
 export default router;
