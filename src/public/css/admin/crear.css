@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*deberia ser centro centro de la pantalla*/
+}
+#formularioCrear {
+    width: 330px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#formularioCrear label {
+    text-align: center;
+}
+#inputNombreProducto, #inputPrecioProducto, #inputImagenProducto, #inputCategoriaProducto{
+    margin: 20px;
+}

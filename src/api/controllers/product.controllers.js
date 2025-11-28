@@ -61,6 +61,8 @@ export const crearProducto = async (req,res) => {
         }
         let [rows] = await productModels.insertarProducto(nombre, precio, imagen, categoria);
         
+        console.log(rows);
+        
         res.status(201).json({
             message: "producto creado con exito",
             productId: rows.insertId

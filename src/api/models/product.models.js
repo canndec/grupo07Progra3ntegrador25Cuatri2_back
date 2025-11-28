@@ -16,7 +16,7 @@ const seleccionarProductosPorId = (id) =>{
     return connection.query(sql, [id]); //solo esto   
 };
 
-const insertarProducto = (nombre, categoria, imagen, precio) => {
+const insertarProducto = (nombre, precio, imagen, categoria) => {
     let sql = `INSERT INTO productos (nombre, precio, imagen, categoria) VALUES (?, ?, ?, ?)`;
     return connection.query(sql, [nombre, precio, imagen, categoria]);
 };
@@ -36,11 +36,19 @@ const eliminarProducto = (id) => {
 };// CREO QUE TIENE QUE SER UPDATE ACTIVO:0
 
 
+// PARA VALIDACIONES-MIDDLEWARES
+const buscarNombre = (nombre) => {
+    let sql = "SELECT * FROM productos WHERE nombre = ?";
+    return connection.query(sql,[nombre]); 
+}
+
+
 
 export default {
     seleccionarTodosProductos,
     seleccionarProductosPorId,
     insertarProducto,
     actualizarProducto,
-    eliminarProducto
+    eliminarProducto,
+    buscarNombre
 }
