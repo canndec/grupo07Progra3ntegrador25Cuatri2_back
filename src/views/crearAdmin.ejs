@@ -2,7 +2,25 @@
 <%- include("partials/header.ejs") %>
 
 <main>
-    <h2><%= sobre %></h2>
+    <!--<h2><%= sobre %></h2>-->
+    <form id="formularioCrear">
+        <label for="inputNombreProducto">Ingrese el nombre</label>
+        <input id="inputNombreProducto" type="text" name="nombre" required>
+        
+        <label for="inputPrecioProducto">Ingrese el precio</label>
+        <input id="inputPrecioProducto" type="text" name="precio" required>
+        
+        <label for="inputImagenProducto">Ingrese la URL de la imagen</label>
+        <input id="inputImagenProducto" type="text" name="imagen" required>
+        
+        <label for="inputCategoriaProducto">Seleccione la categoria</label>
+        <select id="inputCategoriaProducto" name="categoria" required>
+            <option value="consola">Consola</option>
+            <option value="juego">Juego</option>
+        </select>
+        <input type="submit" value="Crear nuevo producto">
+    </form>
+
 </main>
 <script defer src="/js/admin/crear.js"></script>
 <%- include("partials/footer.ejs") %>
