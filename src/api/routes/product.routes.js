@@ -13,6 +13,6 @@ router.get("/", traerTodosLosProductos); // GET -> trae todo
 router.get("/:id",validateId, traerProductosPorId ); // get product by id
 router.post("/", validarRepetido, validarPrecio, crearProducto); // POST - crear producto
 router.put("/", actualizarProducto); // PUT - actualizar producto
-router.delete("/:id", validateId, eliminarProducto); // DELETE - eliminar producto
+router.delete("/:id", validarRepetido, eliminarProducto); // DELETE - eliminar producto
 
 export default router; //exportar todas las rutas
