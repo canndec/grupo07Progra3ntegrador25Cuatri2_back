@@ -41,8 +41,8 @@ const validarPrecio = async (req,res,next) => {
     }
     console.log("Precio ingresado validado", req.precio); 
     next();
-
 }
+
 export {
     loggerUrl,
     validateId,

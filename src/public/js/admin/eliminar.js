@@ -7,11 +7,19 @@ formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
     let formData = new FormData(event.target);
     let data = Object.fromEntries(formData.entries());
-
+    console.log(data);
     let idProd = data.idProd;
+    console.log(idProd);
     console.log(`Realizando una peticion GET a la url ${url}/api/productos/${idProd}`);
     let response = await fetch(`${url}/api/productos/${idProd}`);
     let datos = await response.json();
+
+    if(!response.ok){ 
+        alert(datos.message);
+        gridProductos.innerHTML = "";
+        return;
+    }
+
 
     let producto = datos.payload[0];
     mostrarProductoAEliminar(producto);

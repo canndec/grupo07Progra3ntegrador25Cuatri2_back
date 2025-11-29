@@ -19,8 +19,8 @@ formulario.addEventListener("submit", async (event) => {
         mostrarProducto(producto);
     }else{
         console.log(datos);
-        console.log(datos.message);
-        mostrarError(datos.message);
+        alert(datos.message);
+        //mostrarError(datos.message); // -----------------editarlo para que quede bonis
     }
 
 });
@@ -38,12 +38,12 @@ function mostrarProducto(productoCoincidente) {
     gridProductos.innerHTML = htmlProductos !== "" ? htmlProductos : `<p>No se encontraron productos</p>`;
 }
 
-function mostrarError(message) {
+function mostrarError(mensaje) {
     gridProductos.innerHTML = `
         <li class="mensaje-error">
             <p>
                 <strong>Error:</strong>
-                <span>${message}</span>
+                <span>${mensaje}</span>
             </p>
         </li>
     `;
