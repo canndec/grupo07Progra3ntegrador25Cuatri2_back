@@ -1,0 +1,20 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+#formularioConsultar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Lexend Exa", sans-serif;
+}
+#formularioConsultar label, #formularioConsultar input {
+    margin: 10px;
+    text-align: center;
+}
+#inputID {    
+    padding: 10px;
+    border-radius: 40px;
+}

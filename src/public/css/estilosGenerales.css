@@ -1,5 +1,5 @@
 /*  
-    ACA VAN A ESTAR OS GENERALES GENERALES, FOOTER, NAV , ROOT CON VARIABLES
+    ACA VAN A ESTAR OS GENERALES GENERALES, FOOTER, NAV , ROOT CON VARIABLES, MENU DESPLEGABLE 
 */
 
 :root {
@@ -75,6 +75,51 @@ header {
     filter: invert(100%);
 }
 
+/*MENU DESPLEGABLE PARA MANEJO*/
+
+.contenedorMenu {
+    width: 200px;
+}
+.contenedorBotonesGestion {
+    display: inline-block;
+    position: absolute;  
+    margin: 0 auto;
+}
+
+#tituloPrincipal {
+    border: none;
+    padding: 20px;
+    font-family: "Lexend Exa", sans-serif;
+    background-color: var(--grisVioleta);
+    border-radius: 20px;
+    margin: 20px 20px;
+}
+#flechaMenu {
+    padding-left: 7px;
+    padding: auto;
+    width: 16px;
+}
+#desplegableBotonesGestion {
+    margin-left: 18px;
+    top: 100%;
+}
+
+
+#botonCrear, #botonModificar, #botonEliminar, #botonConsultar, #botonPantallaPrincipal {
+    border: none;
+    padding: 20px;
+    margin-top: 5px;
+    font-family: "Lexend Exa", sans-serif;
+    background-color: white;
+    border-radius: 15px;
+    background-color: var(--grisVioleta);
+    cursor: pointer;
+}
+.oculto {
+    display: none; 
+}
+
+
 
 /*FOOTER*/
 
@@ -101,4 +146,48 @@ footer {
 }
 .temaOscuro .botonTema img {
     filter: invert(0%);
+}
+
+
+/*formularios de crear y modificar */
+
+#inputNombreProducto, #inputPrecioProducto, #inputImagenProducto{
+    padding: 20px;
+    margin: 10px 40px;
+    border-radius: 40px;
+    border-style:solid;
+    border-color: var(--violetaClaro);
+    font-family: "Lexend Exa", sans-serif;
+    font-size:smaller
+}
+#inputCategoriaProducto, #inputActivoProducto{
+    font-family: "Lexend Exa", sans-serif;
+    color: gray;
+    padding: 10px;
+    margin: 10px 40px;
+    border-style:solid;
+    border-color: var(--violetaClaro);
+}
+select:focus {
+    font-family: "Lexend Exa", sans-serif;
+}
+
+
+.botonFinal {
+    padding: 15px;
+    border-radius: 50px;
+    margin: 20px;
+    margin-inline: 150px;
+    border: none;
+    background-color: var(--violetaClaro);
+    font-family: "Lexend Exa", sans-serif;
+}
+
+.temaOscuro #inputNombreProducto, .temaOscuro #inputPrecioProducto, .temaOscuro #inputImagenProducto, .temaOscuro #inputCategoriaProducto{
+    background-color: black;
+    border-color: rgba(255, 255, 255, 0.623); /*un poco mas claro para que no haga tanto contraste*/
+    color: white;
+}
+.temaOscuro #botonFinal {
+    background-color:white;
 }

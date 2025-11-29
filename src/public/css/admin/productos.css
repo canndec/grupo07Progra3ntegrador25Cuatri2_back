@@ -1,41 +1,6 @@
 /*productos*/
 
 
-.contenedorMenu {
-    width: 200px;
-}
-.contenedorBotonesGestion {
-    display: inline-block;
-    position: relative;  
-    margin: 0 auto;
-}
-
-#tituloPrincipal {
-    border: none;
-    padding: 20px;
-    font-family: "Lexend Exa", sans-serif;
-    background-color: var(--grisVioleta);
-    border-radius: 20px;
-    margin: 20px 20px;
-}
-#flechaMenu {
-    padding-left: 7px;
-    padding: auto;
-    width: 16px;
-}
-#desplegableBotonesGestion {
-    margin-left: 18px;
-    top: 100%;
-}
-
-#botonCrear, #botonModificar, #botonEliminar {
-    background-color: rgb(214, 177, 238);
-    border: 2px solid;
-    cursor: pointer;
-}
-.oculto {
-    display: none; 
-}
 
 .contenedorPrincipal {
     display: flex;
@@ -61,13 +26,7 @@
     font-family: "Press Start 2P", cursive;
 
 }
-#inputConsulta {
-    margin: 0;
-    padding: 10px;
-    border-radius: 20px;
-    border-style:ridge;
-    border-color: rgba(47, 3, 88, 0.425);
-}
+
 
 #gridProductos {
 /*contenedor de las cartas*/
@@ -151,13 +110,7 @@
 }
 
 
-#botonCrear, #botonModificar, #botonEliminar {
-    border: none;
-    padding: 20px;
-    font-family: "Lexend Exa", sans-serif;
-    background-color: white;
-    border-radius: 10px;
-}
+
 
 /**/
 .temaOscuro #inputConsulta {

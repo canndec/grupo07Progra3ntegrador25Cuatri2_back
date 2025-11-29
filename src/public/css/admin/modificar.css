@@ -1,16 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/*section del formulario*/
 section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 40px;
 }
-#formularioCrear { 
+
+#formularioModificar {
     font-family: "Lexend Exa", sans-serif;
     font-size: medium;
     width:40%;
@@ -20,6 +15,6 @@ section {
     flex-direction: column;
 }
 
-.temaOscuro #formularioCrear label {
+.temaOscuro #formularioModificar label {
     color: white;
 }

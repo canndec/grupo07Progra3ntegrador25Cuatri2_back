@@ -8,7 +8,7 @@ const loggerUrl = (req,res,next) => {
 
 // middlewares de ruta  valdiador de id
 const validateId = (req,res,next) => {
-    const { id } = req.params;
+    const { id } = req.params; //el req.params obtiene de la ruta
     if(!id || isNaN(Number(id))) {
         return res.status(400).json({
             message: "El id  del producto debe ser un numero valido"
@@ -19,10 +19,8 @@ const validateId = (req,res,next) => {
     next();
 };
 const validarRepetido = async (req,res,next) => {
-    console.log("validarRepetido ejecutándose…");
-
-    const {nombre} = req.body;
-    console.log("Nombre ingresado validado:", nombre);
+    
+    const {nombre} = req.body; //req.body obtiene de peticiones
     
     const [rows] = await productModels.buscarNombre(nombre);
     if(rows.length > 0){
@@ -30,11 +28,24 @@ const validarRepetido = async (req,res,next) => {
             message: `El producto con nombre ${nombre} ya existe`
         }); //si ya existe corta el flujo
     }
-    console.log("Nombre ingresado valdiado", req.nombre);
+    console.log("Nombre ingresado validado", req.nombre);
     next();
+}
+const validarPrecio = async (req,res,next) => {
+    const {precio} = req.body; //porq viene 
+
+    if(precio <= 0){
+        return res.status(400).json({
+            message: `El precio que ingresa debe ser mayor a $0`
+        });
+    }
+    console.log("Precio ingresado validado", req.precio); 
+    next();
+
 }
 export {
     loggerUrl,
     validateId,
-    validarRepetido
+    validarRepetido,
+    validarPrecio
 }

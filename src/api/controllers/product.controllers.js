@@ -49,6 +49,7 @@ export const traerProductosPorId = async (req,res) => {
 // POST - crear producto
 export const crearProducto = async (req,res) => {
     try{
+        console.log("prueba2")
         const {nombre, precio, imagen, categoria} = req.body;
         console.log(req.body);
 

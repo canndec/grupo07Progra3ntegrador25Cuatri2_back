@@ -4,10 +4,9 @@ import viewRoutes from "./view.routes.js";
 
 
 
-export { default as productRoutes } from "./product.routes.js";
-export { default as viewRoutes } from "./view.routes.js";
+
 //archivo de barril que contiene y centraliza las rutas
-/*export{
+export{
     productRoutes,
     viewRoutes
-}*/
+}
