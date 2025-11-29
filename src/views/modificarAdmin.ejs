@@ -2,7 +2,45 @@
 <%- include("partials/header.ejs") %>
 
 <main>
-    <h2><%= sobre %></h2>
+    <aside class="contenedorMenu">
+            <section class="contenedorBotonesGestion">
+                <button id="tituloPrincipal">Panel de gestion <img id ="flechaMenu"src="img/flechaAbajo.png" alt="flechaabajo"></button>
+                <ul id="desplegableBotonesGestion" class="oculto">
+                    <ol id="botonConsultar" onclick="consultarProducto()">Consultar Producto</ol>
+                    <ol id="botonCrear" onclick="crearProducto()">Crear Productos</ol>
+                    <ol id="botonModificar" onclick="modificarProducto()">Modificar productos</ol>
+                    <ol id="botonEliminar" onclick="eliminarProducto()">Eliminar productos</ol>
+                    <ol id="botonPantallaPrincipal" onclick="pantallaPrincipal()">Pantalla principal</ol>
+                </ul>
+            </section>
+    </aside>
+    <section>
+        <form id="formularioModificar">
+            <label for="inputNombreProducto">Nombre</label>
+            <input id="inputNombreProducto" type="text" name="nombre"  placeholder="Ingrese el nombre del producto...">
+            
+            <label for="inputPrecioProducto">Precio</label>
+            <input id="inputPrecioProducto" type="text" name="precio" placeholder="Ingrese el precio del producto...">
+            
+            <label for="inputImagenProducto">Imagen</label>
+            <input id="inputImagenProducto" type="text" name="imagen" placeholder="Ingrese la URL del producto">
+            
+            <label for="inputCategoriaProducto">Categoria</label>
+            <select id="inputCategoriaProducto" name="categoria">
+                <option value="consola">Consola</option>
+                <option value="juego">Juego</option>
+                <option value="" disabled selected hidden >Seleccione una categoria...</option> <!--no se permite elegir,ver ni desplegar-->
+            </select>
+            <label for="inputActivoProducto">Activo</label>
+            <select name="activo" id="inputActivoProducto">
+                <option value="1">Si</option>
+                <option value="0">No</option>
+                <option value="" disabled selected hidden >Seleccione si esta activo...</option> <!--no se permite elegir,ver ni desplegar-->
+            </select>
+            <input class="botonFinal"  type="submit" value="Modificar producto">
+        </form>
+    </section>
+
 </main>
 <script defer src="/js/admin/modificar.js"></script>
 <%- include("partials/footer.ejs") %>

@@ -40,7 +40,7 @@ router.get("/loginAdmin", (req,res) => {
 
 router.get("/productosAdmin", productosAdminView); //productosAdmin trae odo
 
-router.get("/consultarAdmin", consultarAdminView); //vista consulta
+router.get("/consultarAdmin", consultarAdminView); //vista consulta por id
 router.get("/crearAdmin", crearProductoView); //vista crear
 
 router.get("/modificarAdmin", modificarAdminView); //vista modificar

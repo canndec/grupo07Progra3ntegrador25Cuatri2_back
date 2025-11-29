@@ -8,6 +8,7 @@
             <section class="contenedorBotonesGestion">
                 <button id="tituloPrincipal">Panel de gestion <img id ="flechaMenu"src="img/flechaAbajo.png" alt="flechaabajo"></button>
                 <ul id="desplegableBotonesGestion" class="oculto">
+                    <ol id="botonConsultar" onclick="consultarProducto()">Consultar Producto</ol>
                     <ol id="botonCrear" onclick="crearProducto()">Crear Productos</ol>
                     <ol id="botonModificar" onclick="modificarProducto()">Modificar productos</ol>
                     <ol id="botonEliminar" onclick="eliminarProducto()">Eliminar productos</ol>
@@ -20,7 +21,6 @@
                 <button id="botonConsolas">CONSOLAS</button>
                 <button id="botonJuegos">JUEGOS</button>
                 <button id="botonTodo">TODOS</button>
-                <input id="inputConsulta" type="number" min="0"  placeholder="Consulta por id...">
             </div>
             
             <section class="contenedorProductos">

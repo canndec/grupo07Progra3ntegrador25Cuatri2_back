@@ -2,25 +2,40 @@
 <%- include("partials/header.ejs") %>
 
 <main>
-    <!--<h2><%= sobre %></h2>-->
-    <form id="formularioCrear">
-        <label for="inputNombreProducto">Ingrese el nombre</label>
-        <input id="inputNombreProducto" type="text" name="nombre" required>
-        
-        <label for="inputPrecioProducto">Ingrese el precio</label>
-        <input id="inputPrecioProducto" type="text" name="precio" required>
-        
-        <label for="inputImagenProducto">Ingrese la URL de la imagen</label>
-        <input id="inputImagenProducto" type="text" name="imagen" required>
-        
-        <label for="inputCategoriaProducto">Seleccione la categoria</label>
-        <select id="inputCategoriaProducto" name="categoria" required>
-            <option value="consola">Consola</option>
-            <option value="juego">Juego</option>
-        </select>
-        <input type="submit" value="Crear nuevo producto">
-    </form>
+    <aside class="contenedorMenu">
+            <section class="contenedorBotonesGestion">
+                <button id="tituloPrincipal">Panel de gestion <img id ="flechaMenu"src="img/flechaAbajo.png" alt="flechaabajo"></button>
+                <ul id="desplegableBotonesGestion" class="oculto">
+                    <ol id="botonConsultar" onclick="consultarProducto()">Consultar Producto</ol>
+                    <ol id="botonCrear" onclick="crearProducto()">Crear Productos</ol>
+                    <ol id="botonModificar" onclick="modificarProducto()">Modificar productos</ol>
+                    <ol id="botonEliminar" onclick="eliminarProducto()">Eliminar productos</ol>
+                    <ol id="botonPantallaPrincipal" onclick="pantallaPrincipal()">Pantalla principal</ol>
+                </ul>
+            </section>
+    </aside>
+    <section>
+        <form id="formularioCrear">
+            <label for="inputNombreProducto">Nombre</label>
+            <input id="inputNombreProducto" type="text" name="nombre"  placeholder="Ingrese el nombre del producto..."required>
+            
+            <label for="inputPrecioProducto">Precio</label>
+            <input id="inputPrecioProducto" type="text" name="precio" placeholder="Ingrese el precio del producto..."  required>
+            
+            <label for="inputImagenProducto">Imagen</label>
+            <input id="inputImagenProducto" type="text" name="imagen" placeholder="Ingrese la URL del producto" required>
+            
+            <label for="inputCategoriaProducto">Categoria</label>
+            <select id="inputCategoriaProducto" name="categoria" required>
+                <option value="consola">Consola</option>
+                <option value="juego">Juego</option>
+                <option value="" disabled selected hidden >Seleccione una categoria...</option> <!--no se permite elegir,ver ni desplegar-->
+            </select>
 
-</main>
-<script defer src="/js/admin/crear.js"></script>
-<%- include("partials/footer.ejs") %>
+            <input class="botonFinal"type="submit" value="Crear nuevo producto">
+        </form>
+    </section>
+        
+    </main>
+    <script defer src="/js/admin/crear.js"></script>
+    <%- include("partials/footer.ejs") %>

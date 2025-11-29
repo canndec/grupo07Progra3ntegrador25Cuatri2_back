@@ -17,14 +17,13 @@ formulario.addEventListener("submit", async (event) => {
             body: JSON.stringify(data)
         });
 
-        if(response.ok) {
+        if(!response.ok) {
             console.log(response);
 
             let result = await response.json();
             console.log(result);
             alert(result.message)
         }
-        console.log("prueba")
     }catch(error) {
         console.error("Error al cargar los datos:", error);
         alert("Error al procesar la solicitud")

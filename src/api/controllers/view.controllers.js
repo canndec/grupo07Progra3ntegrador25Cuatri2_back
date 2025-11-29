@@ -8,7 +8,7 @@ export const productosAdminView = async (req,res) =>{
         const [rows] = await ProductModels.seleccionarTodosProductos();
         res.render("productosAdmin", {
             titulo: "Listado De Productos",
-            sobre: "todos los productos",
+            sobre: "Todos los productos",
             css : "admin/productos.css",
         }); 
         //con products puedo acceder <%= productos.foreach %> para recorrer y agarrar ej: productos.id
@@ -21,7 +21,7 @@ export const crearProductoView = async (req,res) => {
     try{
         res.render("crearAdmin", {
             titulo: "Crear",
-            sobre: "crear producto",
+            sobre: "Crear producto",
             css: "admin/crear.css"
         });
     } catch (error) {
@@ -33,7 +33,7 @@ export const consultarAdminView = async (req,res) => {
     try{
         res.render("consultarAdmin", {
         titulo: "Consultar",
-        sobre: "consultar producto por id",
+        sobre: "Consultar producto por id",
         css: "admin/consultar.css"
         });
     }catch (error) {
@@ -46,7 +46,7 @@ export const modificarAdminView = async (req,res) => {
     try{
         res.render("modificarAdmin", {
             titulo: "Modificar",
-            sobre: "Modificar/actualizar un producto",
+            sobre: "Modificar producto",
             css:"admin/modificar.css"
         });
     }catch (error) {
@@ -58,7 +58,7 @@ export const eliminarAdminView = async (req,res) => {
     try {
         res.render("eliminarAdmin", {
             titulo: "eliminar",
-            sobre: "eliminar un producto",
+            sobre: "Eliminar producto",
             css: "admin/eliminar.css"
         });
     }catch (error) {

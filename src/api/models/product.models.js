@@ -43,7 +43,6 @@ const buscarNombre = (nombre) => {
 }
 
 
-
 export default {
     seleccionarTodosProductos,
     seleccionarProductosPorId,

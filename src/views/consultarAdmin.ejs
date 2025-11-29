@@ -15,14 +15,15 @@
             </section>
     </aside>
     <section>
-        <form id="formularioEliminar">
+        <form id="formularioConsultar">
             <label for="inputID">ID del producto</label>
             <input name="idProd" id="inputID" type="number" min="0" placeholder="Ingrese el id a consultar...">
             
-            <input class="botonFinal" type="submit" value="Eliminar producto">
+            <input class="botonFinal" type="submit" value="Consultar producto">
         </form>
         <div id="gridProductos"></div> 
     </section>
 </main>
-<script defer src="/js/admin/eliminar.js"></script>
+<script defer src="/js/admin/consultar.js"></script>
+
 <%- include("partials/footer.ejs") %>
