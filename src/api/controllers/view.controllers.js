@@ -1,9 +1,9 @@
 // controladores producto
-import ProductModels from "../models/product.models.js";
+import ProductModels from "../models/product.models.js"; // Hola soy santiago aca importo el modelo 
 
 //cuando se importe va a ser reutilziable para las vistas 
 
-export const productosAdminView = async (req,res) =>{
+export const productosAdminView = async (req,res) =>{ 
     try {
         const [rows] = await ProductModels.seleccionarTodosProductos();
         res.render("productosAdmin", {

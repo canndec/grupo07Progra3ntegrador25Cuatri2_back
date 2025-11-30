@@ -16,7 +16,7 @@ import cors from  "cors"; //modulo cors
 //importar middlewares
 import { loggerUrl} from "./src/api/middlewares/middlewares.js";
 //importar rutas del producto
-import { productRoutes, viewRoutes, userRoutes } from "./src/api/routes/index.js";
+import { productRoutes, viewRoutes, userRoutes , ventasRoutes} from "./src/api/routes/index.js";
 
 //incorpora la configuacion en el index.js
 import {__dirname, join} from "./src/api/utils/index.js";
@@ -52,6 +52,8 @@ app.set("views", join(__dirname,"src/views")); //vistas servidas desde la carpet
 app.use("/api/productos", productRoutes); //ruta de producto
 app.use("/api/usuarios", userRoutes); // ruta de usuario
 app.use("/",viewRoutes);//rutas vista
+app.use("/api/ventas", ventasRoutes); // rutas de ventas
+
 
 
 app.listen(PORT, () => {
