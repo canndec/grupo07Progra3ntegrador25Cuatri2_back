@@ -16,12 +16,10 @@ import cors from  "cors"; //modulo cors
 //importar middlewares
 import { loggerUrl} from "./src/api/middlewares/middlewares.js";
 //importar rutas del producto
-import { productRoutes, viewRoutes } from "./src/api/routes/index.js";
-
+import { productRoutes, viewRoutes, userRoutes } from "./src/api/routes/index.js";
 
 //incorpora la configuacion en el index.js
 import {__dirname, join} from "./src/api/utils/index.js";
-
 
 //import session from "express-session";
 
@@ -52,6 +50,7 @@ app.set("views", join(__dirname,"src/views")); //vistas servidas desde la carpet
 
 // ## RUTAS         
 app.use("/api/productos", productRoutes); //ruta de producto
+app.use("/api/usuarios", userRoutes); // ruta de usuario
 app.use("/",viewRoutes);//rutas vista
 
 
