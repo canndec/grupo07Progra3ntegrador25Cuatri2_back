@@ -1,6 +1,6 @@
 import connection from "../database/db.js";
 
-export async function insertarUsuario(nombre, es_admin = 0) {
+export async function insertarUsuario(nombre, es_admin = 0) { /// Hola soy santiago esta funcion inserta un usuario en la base de datos
     const sql = `
         INSERT INTO usuarios (nombre, email, contrasenia, es_admin)
         VALUES (?, NULL, NULL, ?)
@@ -9,7 +9,7 @@ export async function insertarUsuario(nombre, es_admin = 0) {
     const [result] = await connection.query(sql, [nombre, es_admin]); 
     return result; 
 }
-export async function buscarUsuarioPorNombre(nombre) {
+export async function buscarUsuarioPorNombre(nombre) { /// Hola soy santiago esta funcion busca un usuario por su nombre en la base de datos
     const sql = "SELECT * FROM usuarios WHERE nombre = ?";
     const [rows] = await connection.query(sql, [nombre]);
     return rows;
