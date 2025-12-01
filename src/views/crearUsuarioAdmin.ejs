@@ -7,25 +7,27 @@
                 <button id="tituloPrincipal">Panel de gestion <img id ="flechaMenu"src="img/flechaAbajo.png" alt="flechaabajo"></button>
                 <ul id="desplegableBotonesGestion" class="oculto">
                     <ol id="botonConsultar" onclick="consultarProducto()">Consultar Producto</ol>
+                    <ol id="botonModificar" onclick="modificarProducto()">Modificar productos</ol>
                     <ol id="botonEliminar" onclick="eliminarProducto()">Eliminar productos</ol>
                     <ol id="botonCrear" onclick="crearProducto()">Crear Productos</ol>
-                    <ol id="botonCrearAdmin" onclick="crearUsuarioAdmin()">Crear Administrador</ol>
                     <ol id="botonPantallaPrincipal" onclick="pantallaPrincipal()">Pantalla principal</ol>
                 </ul>
             </section>
     </aside>
     <section>
-        <form id="formularioModificar">
-            <label for="inputID">ID del producto</label>
-            <input name="productoId" id="inputID" type="number" min="0" placeholder="Ingrese el id a consultar...">
-            
-            <input class="botonFinal" type="submit" value="Modificar producto">
+        <form id="formAltaAdmin" autocomplete="off">
+            <label for="nombreAdmin" " >Nombre</label>
+            <input type="text" for="nombreAdmin"  id="inputNombreAdmin" name="nombre"  placeholder="Ingrese su nombre...">
+
+            <label for="emailAdmin">Email</label>
+            <input type="text" for="emailAdmin" id="inputEmailAdmin" name="email"  placeholder="Ingrese su email...">
+
+            <label for="contraseniaAdmin">Contraseña</label>
+            <input type="password" name="contrasenia" id="inputContraseniaAdmin"   placeholder="Ingrese una contraseña...">
+
+            <input type="submit" class="botonFinal" value="Crear" >
         </form>
     </section>
-    <div id="gridProductos"></div> 
-    <section id="productoActualizado"></section>
-
 </main>
-<script defer src="/js/funcionesGenerales.js"></script>
-<script defer src="/js/admin/modificar.js"></script>
-<%- include("partials/footer.ejs") %>
+    <script defer src="/js/admin/crearUsuario.js"></script>
+    <%- include("partials/footer.ejs") %>

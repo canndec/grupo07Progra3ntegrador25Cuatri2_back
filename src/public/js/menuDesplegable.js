@@ -30,3 +30,6 @@ function eliminarProducto(){
 function pantallaPrincipal(){
     location.href = "/productosAdmin";
 }
+function crearUsuarioAdmin(){
+    location.href = "/crearUsuarioAdmin";
+}

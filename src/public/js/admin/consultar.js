@@ -1,6 +1,6 @@
 let gridProductos = document.getElementById("gridProductos"); //contenedor de todos los productos
 
-let formulario = document.getElementById("formularioConsultar");
+let formulario = document.getElementById("formularioModificar");
 let url = "http://localhost:3500";
 
 formulario.addEventListener("submit", async (event) => {
@@ -9,42 +9,43 @@ formulario.addEventListener("submit", async (event) => {
     let formData = new FormData(event.target);
     let data = Object.fromEntries(formData.entries());
     let idProd = data.idProd; //campo del formulario en esta variable
-    console.log(`Realizando una peticion GET a la url ${url}/api/products/${idProd}`);
+    console.log(`Realizando una peticion GET a la url ${url}/api/productos/${idProd}`);
 
     let response = await fetch(`${url}/api/productos/${idProd}`);
     let datos = await response.json();
 
     if(response.ok) {
         let producto = datos.payload[0];
-        mostrarProducto(producto);
+        mostrarProducto(producto,gridProductos);
     }else{
         console.log(datos);
-        alert(datos.message);
-        //mostrarError(datos.message); // -----------------editarlo para que quede bonis
+        //alert(datos.message);
+        mostrarError(datos.message,gridProductos); 
     }
 
 });
-
-function mostrarProducto(productoCoincidente) {
+/*
+function mostrarProducto(productoCoincidente, datos) {
     let htmlProductos = "";
     htmlProductos = ` 
-    <div class="cartaProducto">
+    <div class="cartaUnProducto">
             <img class="productoImagen"src="${productoCoincidente.imagen}" alt="${productoCoincidente.nombre}">
             <h3>${productoCoincidente.nombre}</h3>
             <p>$${productoCoincidente.precio}</p>
             <p> id: ${productoCoincidente.id}</p>  
+            <p> ${hayStock(productoCoincidente.activo)}</p>
         </div>
     `;
-    gridProductos.innerHTML = htmlProductos !== "" ? htmlProductos : `<p>No se encontraron productos</p>`;
+    gridProductos.innerHTML = htmlProductos;
+}
+function hayStock(activo){
+    return activo == 1 ? `Disponible` : `No hay stock`;
 }
 
 function mostrarError(mensaje) {
     gridProductos.innerHTML = `
-        <li class="mensaje-error">
-            <p>
-                <strong>Error:</strong>
-                <span>${mensaje}</span>
-            </p>
-        </li>
-    `;
-}
+        <div class="mensajeError">
+            <strong>Error:</strong>
+            <span>${mensaje}</span>
+        </div>`;
+}*/

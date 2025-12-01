@@ -36,7 +36,7 @@ main {
     font-size: smaller;
     border: none;
 }
-#botonContinuar {
+#botonContinuar, #botonAccesoRapido {
     padding: 10px;
     border-radius: 20px;
     border: none;

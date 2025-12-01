@@ -8,6 +8,8 @@ section {
 #formularioEliminar {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    font-family: "Lexend Exa", sans-serif;
 }
 #formularioEliminar label, #formularioEliminar input {
     margin: 10px;
@@ -16,4 +18,16 @@ section {
 #inputID {    
     padding: 10px;
     border-radius: 40px;
+}
+
+#botonEliminarProducto {
+    margin-top: 10px;
+    padding: 5px;
+    font-family: "Lexend Exa", sans-serif;
+    border: 3px solid var(--violetaTransparente);
+    border-radius: 20px;
+    background-color: white;
+}
+.temaOscuro #formularioEliminar label {
+    color: white;
 }
