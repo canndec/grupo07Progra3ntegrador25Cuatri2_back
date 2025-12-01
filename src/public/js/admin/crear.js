@@ -25,6 +25,7 @@ formulario.addEventListener("submit", async (event) => {
             console.log(result); 
             alert(result.message) 
         }
+        alert("¡Producto creado con exito!")
     }catch(error) { 
         console.error("Error al cargar los datos:", error);
         alert("Error al procesar la solicitud")

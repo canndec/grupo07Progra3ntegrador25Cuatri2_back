@@ -20,7 +20,7 @@ const validateId = (req,res,next) => {
 };
 const validarRepetido = async (req,res,next) => {
     
-    const {nombre} = req.body; //req.body obtiene de peticiones
+    const {nombre} = req.params; //req.body obtiene de peticiones
     
     const [rows] = await productModels.buscarNombre(nombre);
     if(rows.length > 0){
@@ -43,9 +43,19 @@ const validarPrecio = async (req,res,next) => {
     next();
 }
 
+// para proteger las vistas si no se hizo login
+const requiereLogin = (req, res, next) => {
+    if(!req.session.user) {
+        return res.redirect("/loginAdmin");
+    }
+    next(); 
+}
+
+
 export {
     loggerUrl,
     validateId,
     validarRepetido,
-    validarPrecio
+    validarPrecio,
+    requiereLogin
 }

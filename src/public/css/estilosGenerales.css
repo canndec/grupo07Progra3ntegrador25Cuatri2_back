@@ -63,6 +63,18 @@ header {
     width: 150px;
     margin: 8px 20px;
 }
+
+/*boton que aparece en todas las vistas para cerrar sesion*/
+#cerrarSesion {
+    padding: 10px;
+    border-radius: 20px;
+    font-family: "Lexend Exa", sans-serif;
+    background-color: var(--grisVioleta);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
 .botonTema {
     margin: 20px 40px;
     cursor: pointer;
@@ -94,18 +106,20 @@ header {
     border-radius: 20px;
     margin: 20px 20px;
 }
+/*menu desplegable*/
 #flechaMenu {
     padding-left: 7px;
     padding: auto;
     width: 16px;
 }
+
 #desplegableBotonesGestion {
     margin-left: 18px;
     top: 100%;
 }
 
 
-#botonCrear, #botonModificar, #botonEliminar, #botonConsultar, #botonPantallaPrincipal {
+#botonCrear, #botonModificar, #botonEliminar, #botonConsultar, #botonPantallaPrincipal, #botonCrearAdmin {
     border: none;
     padding: 20px;
     margin-top: 5px;
@@ -119,7 +133,16 @@ header {
     display: none; 
 }
 
+/*MENU EN MODO OSCURO*/
+.temaOscuro #flechaMenu {
+    filter: invert(100%);
+}
+.temaOscuro #tituloPrincipal, .temaOscuro #botonCrear, .temaOscuro #botonModificar,.temaOscuro  #botonEliminar,.temaOscuro  #botonConsultar,
+.temaOscuro #botonPantallaPrincipal, .temaOscuro #botonCrearAdmin{
+    background-color: var(--violetaTransparente);
+    color: white;
 
+}
 
 /*FOOTER*/
 
@@ -137,6 +160,7 @@ footer {
     filter: invert(100%);
 }
 
+/*TEMA OSCURO*/
 .temaOscuro footer p{
     filter: invert(100%);
 }
@@ -147,11 +171,19 @@ footer {
 .temaOscuro .botonTema img {
     filter: invert(0%);
 }
+.temaOscuro #cerrarSesion {
+    background-color: var(--violetaPrincipal);
+    color: rgb(255, 255, 255);
+}
 
 
 /*formularios de crear y modificar */
 
-#inputNombreProducto, #inputPrecioProducto, #inputImagenProducto{
+/*son los input de formularios*/
+/*
+    de altaadmin/modifiar/crear
+*/
+#inputNombreProducto, #inputPrecioProducto, #inputImagenProducto, #inputNombreAdmin, #inputEmailAdmin, #inputContraseniaAdmin{
     padding: 20px;
     margin: 10px 40px;
     border-radius: 40px;
@@ -172,7 +204,7 @@ select:focus {
     font-family: "Lexend Exa", sans-serif;
 }
 
-
+/*boton de formularios para finalizar*/
 .botonFinal {
     padding: 15px;
     border-radius: 50px;
@@ -181,9 +213,40 @@ select:focus {
     border: none;
     background-color: var(--violetaClaro);
     font-family: "Lexend Exa", sans-serif;
+    cursor: pointer;
 }
 
-.temaOscuro #inputNombreProducto, .temaOscuro #inputPrecioProducto, .temaOscuro #inputImagenProducto, .temaOscuro #inputCategoriaProducto{
+/*mostrarProducto en consulta y eliminar*/
+
+.cartaUnProducto {
+    border: 4px solid var(--grisVioleta);
+    padding: 10px;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    max-width: 230px;
+    max-height: 350px;
+}
+.cartaUnProducto h3, .cartaUnProducto p{
+    font-family: "Lexend Exa", sans-serif;
+    margin-top: 10px;
+
+}
+.productoImagen{
+    width: 150px;
+}
+
+.temaOscuro .cartaProducto h3, .temaOscuro .cartaProducto p {
+    color: white;
+
+}
+
+
+
+.temaOscuro #inputNombreProducto, .temaOscuro #inputPrecioProducto, .temaOscuro #inputImagenProducto, .temaOscuro #inputCategoriaProducto,
+.temaOscuro #inputNombreAdmin, .temaOscuro #inputEmailAdmin, .temaOscuro #inputContraseniaAdmin{
     background-color: black;
     border-color: rgba(255, 255, 255, 0.623); /*un poco mas claro para que no haga tanto contraste*/
     color: white;

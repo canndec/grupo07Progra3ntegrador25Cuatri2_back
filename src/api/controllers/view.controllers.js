@@ -69,4 +69,15 @@ export const eliminarAdminView = async (req,res) => {
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>
-
+export const crearUsuarioAdminView = async (req,res) => {
+    try {
+        res.render("crearUsuarioAdmin", {
+            titulo: "crear admimistrador",
+            sobre: "alta usuario administrador",
+            css: "admin/crearUsuario.css"
+        });
+    } catch (error) {
+        console.error("Error al cargar la vista para crear un administrador:", error);
+        res.status(500).send("Error interno del servidor al cargar la vista.");
+    }
+}

@@ -2,7 +2,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 40px;
 }
 #formularioConsultar {
     display: flex;
@@ -17,4 +17,24 @@ section{
 #inputID {    
     padding: 10px;
     border-radius: 40px;
+}
+
+
+.mensajeError {
+    display: flex;
+    justify-self: center;
+    border: 4px solid var(--rojoVaciar);
+    color: var(--rojoVaciar);
+    font-weight: 300;
+    font-size: medium;
+    padding: 20px;
+    width: 250px;
+    height: 50px;
+    font-family: "Lexend Exa", sans-serif;
+}
+
+
+
+.temaOscuro #formularioConsultar label {
+    color: white;
 }

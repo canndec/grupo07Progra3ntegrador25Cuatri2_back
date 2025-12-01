@@ -7,7 +7,7 @@ export const crearVenta = async (req, res) => {
         const { nombre_usuario, monto_total, carrito } = req.body; 
 
         if (!nombre_usuario || typeof monto_total !== 'number' || monto_total <= 0 || !Array.isArray(carrito) || carrito.length === 0) {
-             return res.status(400).json({
+            return res.status(400).json({
                 message: "DATOS DE VENTA INVÁLIDOS. FALTA INFORMACIÓN REQUERIDA."
             });
         }

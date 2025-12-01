@@ -65,6 +65,7 @@ function mostrarProductos(array){
         <div class="cartaProducto">
             <img class="productoImagen"src="${p.imagen}" alt="${p.nombre}">
             <h3>${p.nombre}</h3>
+            <p>Id: ${p.id}</p>
             <p>$${p.precio}</p>
             <p onclick = cambiarVista()> hay stock</p>  
         </div>`).join(""); 

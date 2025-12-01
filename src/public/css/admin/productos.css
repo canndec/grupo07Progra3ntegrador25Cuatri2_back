@@ -24,7 +24,6 @@
     border-radius: 15px;
     cursor: pointer; /*cambia el logito del mouse*/
     font-family: "Press Start 2P", cursive;
-
 }
 
 
@@ -112,15 +111,8 @@
 
 
 
-/**/
-.temaOscuro #inputConsulta {
-    background-color: black;
-    border-color: rgba(255, 255, 255, 0.63);
-}
-.temaOscuro #tituloPrincipal {
-    background-color: var(--violetaTransparente);
+
+.temaOscuro .productoNombre, .temaOscuro .cartaProducto h3, .temaOscuro .cartaProducto p,
+.temaOscuro  .productoImagen, .temaOscuro #botonConsolas, .temaOscuro #botonJuegos, .temaOscuro #botonTodo{
     color: white;
-}
-.temaOscuro #flechaMenu {
-    filter: invert(100%);
 }
