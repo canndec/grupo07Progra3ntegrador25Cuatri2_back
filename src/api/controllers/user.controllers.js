@@ -1,6 +1,6 @@
 import { insertarUsuario, buscarUsuarioPorNombre } from "../models/user.models.js"; /// Hola soy santiago aca importo las funciones del modelo user.models.js
 
-export async function crearUsuarioSinPassword(req, res) {  /// Hola soy santiago este controlador crea un usuario sin password lo auto pone como que no es admin
+export async function crearUsuarioSinPassword (req, res) {  /// Hola soy santiago este controlador crea un usuario sin password lo auto pone como que no es admin
   try {
     const { nombre, es_admin } = req.body;
 
