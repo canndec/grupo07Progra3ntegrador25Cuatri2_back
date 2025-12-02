@@ -1,7 +1,8 @@
 import userModels from "../models/user.models.js"; /// Hola soy santiago aca importo las funciones del modelo user.models.js
+
 import bcrypt from "bcrypt";
 
-export const  crearUsuarioSinPassword = async (req, res) => {  /// Hola soy santiago este controlador crea un usuario sin password lo auto pone como que no es admin
+export async function crearUsuarioSinPassword (req, res)  {   /// Hola soy santiago este controlador crea un usuario sin password lo auto pone como que no es admin
   try {
     const { nombre, es_admin } = req.body;
 
@@ -20,8 +21,8 @@ export const  crearUsuarioSinPassword = async (req, res) => {  /// Hola soy sant
         es_admin: existentes[0].es_admin  /// Hola soy santiago le devuelvo los datos del usuario existente
       });  
     }  
-const result = await insertarUsuario(nombreTrim, es_admin ?? 0);  /// Hola soy santiago inserto el nuevo usuario con el nombre y si es admin o no (por defecto no es admin)
-      
+
+const result = await userModels.insertarUsuario(nombreTrim, es_admin ?? 0);      
       return res.status(201).json({
         message: "Usuario creado",
         id: result.insertId,
