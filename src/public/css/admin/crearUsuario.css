@@ -1,0 +1,21 @@
+/*section del formulario*/
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+#formAltaAdmin {
+    font-family: "Lexend Exa", sans-serif;
+    font-size: medium;
+    width:40%;
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.temaOscuro #formAltaAdmin label {
+    color: white;
+}

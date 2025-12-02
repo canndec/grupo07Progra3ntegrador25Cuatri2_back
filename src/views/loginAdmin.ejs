@@ -5,13 +5,16 @@
     <div id="contenedorLoginAdmin">
         <section id="entradaLogin">
             <h1> <%= sobre %></h1>
-            <form id="formIngreso"> <!--action="productos.html"action: redirecciona a la otra pagina-->
-                <input id="inputEmail"type="email" placeholder="Ingrese su email..." autocomplete="off"> <!--autocomplete justamente para que no salten nombres anteriores-->
-                <input id="inputContrasenia"type="password" placeholder="Ingrese su constraseña..." autocomplete="off"> <!--autocomplete justamente para que no salten nombres anteriores-->
-                <button id="botonContinuar">Continuar</button>
+            <form id="formIngreso" autocomplete="off" action="api/productosAdmin" method="POST"> 
+                <input id="inputEmail" type="email" name="email" placeholder="Ingrese su email..." > <!--autocomplete justamente para que no salten nombres anteriores-->
+                <input id="inputContrasenia"type="password" name="contrasenia" placeholder="Ingrese su constraseña..." > <!--autocomplete justamente para que no salten nombres anteriores-->
+                
+                <input type="submit" value="Ingresar" id="botonContinuar">
+                <!--<button id="botonContinuar">Ingresar</button>-->
+                <input id="botonAccesoRapido" type="button" value="Acceso rapido">
             </form>
         </section>
-        <button id="botonCliente">Cliente</button>
+        <!--<button id="botonCliente">Cliente</button>-->
     </div>
     </main>
     <%- include("partials/footer.ejs") %>

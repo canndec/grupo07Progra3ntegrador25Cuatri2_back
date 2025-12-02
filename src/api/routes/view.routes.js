@@ -1,11 +1,13 @@
 import { Router } from "express";
 import {
+    crearUsuarioAdminView,
     consultarAdminView,
     crearProductoView,
     modificarAdminView,
     eliminarAdminView,
     productosAdminView, /// VISTA PRODUCTOS ADMIN
 } from "../controllers/view.controllers.js";
+import { requiereLogin } from "../middlewares/middlewares.js";
 
 const router = Router();
 
@@ -25,6 +27,6 @@ router.get("/crearAdmin", crearProductoView); //vista crear
 
 router.get("/modificarAdmin", modificarAdminView); //vista modificar
 router.get("/eliminarAdmin", eliminarAdminView); //vista eliminar
-
+router.get("/crearUsuarioAdmin", crearUsuarioAdminView); //hacer un alta de usuario 
 
 export default router;

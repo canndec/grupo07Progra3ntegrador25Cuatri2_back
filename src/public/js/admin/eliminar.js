@@ -25,7 +25,7 @@ formulario.addEventListener("submit", async (event) => {
     mostrarProductoAEliminar(producto);
     let botonEliminarProducto = document.getElementById("botonEliminarProducto");
 
-    botonEliminarProducto.addEventListener("click", event => {
+    botonEliminarProducto.addEventListener("click", event => { //propio de confirmar eliminaicon
         event.stopPropagation(); // Evitamos la propagacion de eventos
         let confirmacion = confirm("Queres eliminar este producto?");
         if(!confirmacion) {
@@ -39,13 +39,12 @@ formulario.addEventListener("submit", async (event) => {
 function mostrarProductoAEliminar(producto){
     
     let htmlProducto = `
-        <li class="li-producto">
-                <img class="producto-img" src="${producto.imagen}" alt="${producto.nombre}">
-                <p>Id: ${producto.id} / Nombre: ${producto.nombre} / <strong>Precio: ${producto.precio}</strong></p>
-        </li>
-        <li class="li-botonera">
-            <input type="button" id="botonEliminarProducto" value="Eliminar producto">
-        </li>
+        <div class="cartaUnProducto">
+            <img class="productoImagen" src="${producto.imagen}" alt="${producto.nombre}">
+            <p>${producto.nombre} </p>
+            <p>Id: ${producto.id}</p>
+            <p>${producto.precio}</p>
+            <input type="button" id="botonEliminarProducto" value="Confirmar Eliminación ">    
     `;
     gridProductos.innerHTML = htmlProducto;
 };

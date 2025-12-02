@@ -28,9 +28,9 @@ export const traerProductosPorId = async (req,res) => {
         
         // optimizacion 2
         if(rows.length === 0){
-            console.log("Error no existe un producto con ese id");
-            res.status(404).json({
-                message: `No se encontro producto con id ${id}`
+            console.log("Error, no existe un producto con ese id");
+            return res.status(404).json({
+                message: `No se encontró el producto con id ${id}`
             });
         }
 

@@ -1,5 +1,10 @@
 <header>
-    <img class="logoConNombre" src="img/logoSinFondoClaro.png" alt="JoyStiq-logo">
-    <%=sobre %>
+    <a href="/productosAdmin">
+        <img class="logoConNombre" src="img/logoSinFondoClaro.png" alt="JoyStiq-logo">
+    </a>
+    <%= sobre %>
+    <form action="/" id="logout" method="logout">
+        <input id="cerrarSesion" type="submit" value="Cerrar sesion">
+    </form>
     <button class="botonTema" id="botonTema"><img src="img/modoOscuro.png" alt="TemaDispositivo"></button>      
 </header>
