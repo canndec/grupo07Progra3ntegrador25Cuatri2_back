@@ -89,7 +89,7 @@ export const actualizarProducto = async (req, res) => {
                 message: "Faltan campos requeridos"
             });
         }
-        let [result] = await productModels.actualizarProducto(nombre, precio, imagen, categoria, id);
+        let [result] = await productModels.actualizarProducto(nombre, precio, imagen, categoria,activo, id);
         // optimizacion 2  - que se actualziara el prod
         if(result.affectedRows === 0){
             return res.status(400).json({
