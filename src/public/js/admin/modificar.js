@@ -29,6 +29,7 @@ async function crearFormularioParaActualizar(producto){
     console.table(producto);
     let formHTML = `
     <form id="formularioModificarActualizado">
+            <input type="hidden" name="id" value="${producto.id}">
             <label for="inputNombreProducto">Nombre</label>
             <input id="inputNombreProducto" type="text" name="nombre" value="${producto.nombre}" placeholder="Ingrese el nombre del producto..." required>
             
@@ -38,18 +39,17 @@ async function crearFormularioParaActualizar(producto){
             <label for="inputImagenProducto">Imagen</label>
             <input id="inputImagenProducto" type="text" name="imagen" value="${producto.imagen}" placeholder="Ingrese la URL del producto" required>
             
-            <label for="inputCategoriaProducto">Categoria</label>
+           <label for="inputCategoriaProducto">Categoria</label>
             <select id="inputCategoriaProducto" name="categoria" required>
-                <option value="consola">Consola</option>
-                <option value="juego">Juego</option>
-                <option value="" disabled selected hidden >${producto.categoria}</option >
+                <option value="consola" ${producto.categoria === 'consola' ? 'selected' : ''}>Consola</option>
+                <option value="juego" ${producto.categoria === 'juego' ? 'selected' : ''}>Juego</option>
             </select>
             
             <label for="inputActivoProducto">Activo</label>
             <select name="activo" id="inputActivoProducto" required>
-                <option value="1">Si</option>
-                <option value="0">No</option>
-                <option value="" disabled selected hidden value="Seleccione si esta activo..." >${producto.activo}</option></select>
+                <option value="1" ${producto.activo == 1 ? 'selected' : ''}>Si</option>
+                <option value="0" ${producto.activo == 0 ? 'selected' : ''}>No</option>
+            </select>
             <input class="botonFinal"  type="submit" value="Modificar producto">
         </form>`;
     
@@ -79,7 +79,7 @@ async function actualizarProducto(evento) {
 
         if(response.ok) {
             console.log(resultado.message);
-            alert(result.message);
+            alert(resultado.message);
         }else {
             console.log(resultado.message);
             mostrarError(resultado.message,gridProductos)
