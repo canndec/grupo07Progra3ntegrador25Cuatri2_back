@@ -86,8 +86,3 @@ main {
 #iconoOjo:hover {
     opacity: 1; /* Al pasar el mouse se ve completo */
 }
-
-/* Ajuste para MODO OSCURO */
-.temaOscuro #iconoOjo {
-    filter: invert(100%); /* Invierte el color si el icono es negro */
-}

@@ -9,7 +9,7 @@ formulario.addEventListener("submit", async (event) => {
     let data = Object.fromEntries(formData.entries());
     let idProd = data.productoId;
 
-    console.log(`Realizando una peticion GET a la url ${url}/api/products/${idProd}`);
+    console.log(`Realizando una peticion GET a la url ${url}/api/productos/${idProd}`);
     let response = await fetch(`${url}/api/productos/${idProd}`);
     let datos = await response.json();
 

@@ -41,14 +41,14 @@ section {
         padding: 20px; 
     }
 
- 
+
     #inputID {
         width: 100%; 
         box-sizing: border-box; 
         margin: 10px 0;
     }
 
- 
+
     #formularioModificar .botonFinal, 
     #formularioModificarActualizado .botonFinal {
         margin-inline: 0; 

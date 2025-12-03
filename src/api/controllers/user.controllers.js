@@ -48,7 +48,6 @@ export const crearUsuarioAdmin = async (req, res) => {
     const saltRounds = 10;
     const constraseniaHasheada = await bcrypt.hash(contrasenia, saltRounds);
 
-    //const [rows] = await userModels.insertarUsuarioAdmin(nombre, email, contrasenia);
     //con contrasenia hasheada
     const [rows]  = await userModels.insertarUsuarioAdmin(nombre,email, constraseniaHasheada);
     res.status(201).json({
