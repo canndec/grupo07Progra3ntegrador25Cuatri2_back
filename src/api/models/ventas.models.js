@@ -21,7 +21,15 @@ const insertarDetallesVenta = (valores) => {
     return connection.query(sql, [valores]);
 };
 
+const obtenerTodasVentas = () => {
+    // HOLA SOY SANTIAGO TRAIGO TODAS LAS VENTAS ORDENADAS POR FECHA DESCENDENTE, LUJITOS
+    const sql = `SELECT * FROM ventas ORDER BY fecha DESC`;
+    return connection.query(sql);
+};
+
 export default {
+    
     insertarVenta,
-    insertarDetallesVenta
+    insertarDetallesVenta,
+    obtenerTodasVentas
 };

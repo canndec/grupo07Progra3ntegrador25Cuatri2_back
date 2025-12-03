@@ -1,4 +1,5 @@
 import ventasModels from "../models/ventas.models.js";
+import ExcelJS from 'exceljs';
 
 /// CREO LA VARIABLE CREAR VENTA VA A MANEJAR LA LOGICA DE LA VENTA INSERTANDO TANTO EN TABLA VENTAS COMO EN VENTAS PRODUCTOS
 export const crearVenta = async (req, res) => {
@@ -56,5 +57,49 @@ export const crearVenta = async (req, res) => {
             message: "ERROR INTERNO DEL SERVIDOR AL REGISTRAR LA VENTA",
             error: error.message
         });
+    }
+};
+
+export const exportarExcelVentas = async (req, res) => {
+    try {
+        // 1. Obtener datos de la base de datos
+        const [rows] = await ventasModels.obtenerTodasVentas();
+        
+        if (rows.length === 0) {
+            return res.status(404).json({ message: "No se encontraron ventas para exportar." });
+        }
+
+        // 2. Crear y configurar el libro de Excel
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('Reporte de Ventas');
+
+        // 3. Definir las columnas (Ajusta los 'key' a los nombres exactos de tus columnas SQL)
+        worksheet.columns = [
+            { header: 'ID Venta', key: 'id', width: 10 },
+            { header: 'Cliente', key: 'nombre_usuario', width: 30 },
+            { header: 'Fecha', key: 'fecha', width: 25, style: { numFmt: 'yyyy-mm-dd hh:mm:ss' } },
+            { header: 'Monto Total', key: 'monto_total', width: 15, style: { numFmt: '"$"#,##0.00' } },
+        ];
+        
+        // 4. Añadir los datos
+        worksheet.addRows(rows);
+
+        // 5. Configurar las cabeceras HTTP para forzar la DESCARGA del archivo
+        res.setHeader(
+            'Content-Type',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        );
+        res.setHeader(
+            'Content-Disposition',
+            'attachment; filename=' + 'reporte_ventas.xlsx'
+        );
+
+        // 6. Escribir el archivo y enviarlo
+        await workbook.xlsx.write(res);
+        res.end(); 
+
+    } catch (error) {
+        console.error("Error al exportar Excel:", error);
+        res.status(500).json({ message: "Error interno al generar el reporte." });
     }
 };
