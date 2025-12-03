@@ -56,9 +56,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
     flex-wrap: wrap;
-    /*padding: 10px 20px;*/
+    padding: 10px 20px;
 }
+/*RESPONSIVE */ 
+
+
+
+
 .logoConNombre {
     width: 150px;
     margin: 8px 20px;
@@ -122,8 +128,93 @@ header {
     background-color: var(--violetaClaro);
     cursor: pointer;
 }
+/* MENU DESPLEGABLE RESPONSIVE */
+@media (max-width: 768px) {
 
+    /* 1. NO PUDE BORRAR TU BOTON ENTONCES DEJO DE SER UNA BARRA LATERAL (Ahora es una cajita flotante) */
+    #desplegableBotonesGestion {
+        position: fixed;
+        bottom: 90px; /* Justo arriba del botón redondo */
+        right: 20px;  
+        left: auto;   
+        top: auto;    
+        width: 200px; 
+        height: auto; 
+        border-radius: 15px; 
+        z-index: 1000;
+        
+        /* Organizacion interna */
+        display: flex;
+        flex-direction: column;
+        padding: 15px 0; /* Un poco de aire arriba y abajo */
+        gap: 10px;
 
+        /* ANIMACIÓN DE SALIDA (Zoom desde la esquina) */
+        transform-origin: bottom right; 
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        transform: scale(1); 
+        opacity: 1;
+    }
+
+    /* 2. ESTADO OCULTO (Cuando tiene la clase .oculto) */
+    #desplegableBotonesGestion.oculto {
+        display: flex; 
+        transform: scale(0); 
+        opacity: 0;           
+        pointer-events: none;  
+    }
+
+    /* 3. BOTONES DENTRO DEL MENU*/
+    #desplegableBotonesGestion button {
+        width: 85%;
+        margin: 0 auto;
+        background-color: transparent;
+        font-size: 0.8rem;
+        text-align: center; 
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    /* 4. EL BOTON REDONDO */
+    #tituloPrincipal {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: var(--violetaOscuro);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        z-index: 2000;
+        font-size: 0;
+    }
+
+    #tituloPrincipal img {
+        width: 25px;
+        height: 25px;
+        filter: invert(100%);
+        display: block;
+    }
+
+    /* 5. MODO OSCURO */
+    .temaOscuro #desplegableBotonesGestion {
+        background-color: var(--fondoModoOscuro);
+        border: 1px solid var(--violetaClaro);
+    }
+    
+    .temaOscuro #desplegableBotonesGestion button {
+        background-color: var(--violetaModoOscuro);
+        color: white;
+        border: 1px solid var(--violetaClaro);
+    }
+}
 #botonCrear, #botonModificar, #botonEliminar, #botonConsultar, #botonPantallaPrincipal, #botonCrearAdmin, #botonImprimirExcel {
     border: none;
     padding: 20px;

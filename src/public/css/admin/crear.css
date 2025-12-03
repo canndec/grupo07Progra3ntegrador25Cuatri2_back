@@ -23,3 +23,44 @@ section {
 .temaOscuro #formularioCrear label {
     color: white;
 }
+
+#formularioCrear {
+    font-family: "Lexend Exa", sans-serif;
+    font-size: medium;
+    width: 40%;
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.temaOscuro #formularioCrear label {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    #formularioCrear {
+        width: 90%;
+        height: auto;
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    #formularioCrear input,
+    #formularioCrear select {
+        width: 100%;
+        margin: 10px 0 !important;
+        box-sizing: border-box;
+    }
+
+    #formularioCrear .botonFinal {
+        margin-inline: 0 !important;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #formularioCrear label {
+        margin-top: 10px;
+        display: block;
+    }
+}

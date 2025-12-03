@@ -32,3 +32,42 @@ section {
 .temaOscuro #formularioModificar label, .temaOscuro #formularioModificarActualizado label {
     color: white;
 }
+/*RESPONSIVE */
+@media (max-width: 768px) {
+    
+    #formularioModificar, #formularioModificarActualizado {
+        width: 90%; 
+        height: auto;
+        padding: 20px; 
+    }
+
+ 
+    #inputID {
+        width: 100%; 
+        box-sizing: border-box; 
+        margin: 10px 0;
+    }
+
+ 
+    #formularioModificar .botonFinal, 
+    #formularioModificarActualizado .botonFinal {
+        margin-inline: 0; 
+        width: 100%;      
+        margin-top: 20px; 
+    }
+
+    #botonActualizarProducto {
+        margin-inline: 0 !important; 
+        width: 100%;
+        display: block;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    #formularioModificarActualizado input, 
+    #formularioModificarActualizado select {
+        width: 100%;
+        margin: 10px 0 !important; 
+        box-sizing: border-box;
+    }
+}

@@ -1,5 +1,19 @@
 let formulario = document.getElementById("formAltaAdmin");
 let url = "http://localhost:3500";
+const inputPassAdmin = document.getElementById('inputContraseniaAdmin');
+const ojoAdmin = document.getElementById('ojoContraseniaAdmin');
+
+ojoAdmin.addEventListener('click', () => {
+    if (inputPassAdmin.type === "password") {
+        inputPassAdmin.type = "text";
+        
+        ojoAdmin.src = "img/ojo.png"; 
+    } else {
+        inputPassAdmin.type = "password";
+        
+        ojoAdmin.src = "img/ojoCerrado.png";
+    }
+});
 
 formulario.addEventListener("submit", async event => {
     event.preventDefault();
