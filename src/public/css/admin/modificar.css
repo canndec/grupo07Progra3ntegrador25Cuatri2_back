@@ -29,6 +29,6 @@ section {
     border-radius: 40px;
 }
 
-.temaOscuro #formularioModificar label {
+.temaOscuro #formularioModificar label, .temaOscuro #formularioModificarActualizado label {
     color: white;
 }

@@ -13,8 +13,12 @@
                 <input id="botonAccesoRapido" type="button" value="Acceso rapido">
             </form>
         </section>
-        <!--<button id="botonCliente">Cliente</button>-->
-    </div>
+        <% if (typeof error !== "undefined") { %> <!-- para que muestre el error cuando se hizo el endpint-->
+            <div class="mensajeError">
+                <%= error %></div>
+                <% } %>
+                <!--<button id="botonCliente">Cliente</button>-->
+            </div>
     </main>
     <%- include("partials/footer.ejs") %>
 <script defer src="/js/admin/login.js"></script>
