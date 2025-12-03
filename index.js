@@ -15,7 +15,7 @@ import cors from  "cors"; //modulo cors
 //importar middlewares
 import { loggerUrl} from "./src/api/middlewares/middlewares.js";
 //importar rutas del producto
-import { productRoutes, viewRoutes, userRoutes , ventasRoutes} from "./src/api/routes/index.js";
+import { productRoutes, viewRoutes, userRoutes , ventasRoutes, loginRoutes} from "./src/api/routes/index.js";
 
 //incorpora la configuacion en el index.js
 import {__dirname, join} from "./src/api/utils/index.js";
@@ -55,16 +55,18 @@ app.set("views", join(__dirname,"src/views")); //vistas servidas desde la carpet
 // ## RUTAS         
 app.use("/api/productos", productRoutes); //ruta de producto
 app.use("/api/usuarios", userRoutes); // ruta de usuario
-
+app.use("/api/login", loginRoutes); // ruta para login
 //endpoint que recibe los datos que enviamos del <form> del login.ejs
+/*
 app.post("/loginAdmin", async (req,res) => {
     try{
         const {email, contrasenia} = req.body; //del form
-
         if(!email || !contrasenia){
             return res.render("loginAdmin", {
                 titulo: "login admin",
-                error: "Todos los campos son necesarios de completar"
+                error: "Todos los campos son necesarios de completar",
+                sobre: "Bienvenido al Panel Administrador", 
+                css: "admin/login.css"
             });
         }
 
@@ -76,7 +78,9 @@ app.post("/loginAdmin", async (req,res) => {
         if(rows.length === 0){
             return res.render("loginAdmin", {
                 titulo: "login administrador",
-                error: "Hubo un error, email o constraseña no validos"
+                error: "Hubo un error, email o constraseña no validos",
+                sobre: "Bienvenido al Panel Administrador", 
+                css: "admin/login.css"
             });
         } 
 
@@ -95,11 +99,14 @@ app.post("/loginAdmin", async (req,res) => {
                 nombre: usuario.nombre,
                 email: usuario.email
             }
+            
             res.redirect("/productosAdmin"); //una vez que se guarda redirecciona al dashboard
         } else {
             return res.render("loginAdmin", {
                 titulo: "Login admin",
-                error: "Ups!, contraseña incorrecta"
+                error: "Ups!, contraseña incorrecta",
+                sobre: "Bienvenido al Panel Administrador", 
+                css: "admin/login.css"
             });
         }
 
@@ -110,20 +117,9 @@ app.post("/loginAdmin", async (req,res) => {
         })
     }
 
-});
+});*/
 
-//endpoint para logout
-app.post("/logout", (req,res) => {
-    res.session.destroy( (error) => {
-        if(error) {
-            console.log("Error al destruir la sesion: ", error);
-            return res.status(500).json({
-                error: "error al cerrar sesion"
-            });
-        }
-        res.redirect("/");
-    })
-})
+
 
 app.use("/",viewRoutes);//rutas vista
 app.use("/api/ventas", ventasRoutes); // rutas de ventas

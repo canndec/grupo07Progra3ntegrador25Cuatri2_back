@@ -23,9 +23,14 @@ export async function buscarUsuarioPorNombre(nombre) { /// Hola soy santiago est
     const [rows] = await connection.query(sql, [nombre]);
     return rows;
 }
+export async function buscarEmail(email){
+    const sql = "SELECT * FROM usuarios where email = ?";
+    return connection.query(sql,[email]);
+}
 
 export default {
     insertarUsuarioAdmin,
     insertarUsuario,
-    buscarUsuarioPorNombre
+    buscarUsuarioPorNombre,
+    buscarEmail
 }

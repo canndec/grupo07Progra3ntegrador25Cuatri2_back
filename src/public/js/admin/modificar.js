@@ -13,8 +13,13 @@ formulario.addEventListener("submit", async (event) => {
     let response = await fetch(`${url}/api/productos/${idProd}`);
     let datos = await response.json();
 
-    let producto = datos.payload[0];
+    if(!response.ok) {
+        console.log(datos);
+        //alert(datos.message);
+        mostrarError(datos.message,gridProductos); 
+    }
 
+    let producto = datos.payload[0];
     mostrarProducto(producto,gridProductos); //esta en funcionesGenerales.js
     gridProductos.innerHTML += `<input type="button" id="botonActualizarProducto" value="Actualizar producto"></input>`;
 
