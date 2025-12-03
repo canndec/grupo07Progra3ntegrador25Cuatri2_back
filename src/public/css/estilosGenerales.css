@@ -117,9 +117,14 @@ header {
     margin-left: 18px;
     top: 100%;
 }
+/* estilito lindo para tu menu :d */
+#desplegableBotonesGestion ol:hover { 
+    background-color: var(--violetaClaro);
+    cursor: pointer;
+}
 
 
-#botonCrear, #botonModificar, #botonEliminar, #botonConsultar, #botonPantallaPrincipal, #botonCrearAdmin {
+#botonCrear, #botonModificar, #botonEliminar, #botonConsultar, #botonPantallaPrincipal, #botonCrearAdmin, #botonImprimirExcel {
     border: none;
     padding: 20px;
     margin-top: 5px;

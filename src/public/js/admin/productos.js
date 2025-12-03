@@ -94,7 +94,10 @@ botonSiguiente.addEventListener("click", function() {
     }
 });
 
-
+function imprimirExcelVentas() {
+    window.open(`${url}/api/ventas/exportar-excel`, '_blank'); 
+    alert("Iniciando descarga del reporte de ventas...");
+}
 function init(){
     obtenerProductos();
 }
