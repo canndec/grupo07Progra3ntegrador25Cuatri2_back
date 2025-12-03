@@ -1,6 +1,6 @@
 import userModels from "../models/user.models.js"; // uso el mismo user models para no crear otro archivo por una sentencia sola
 import bcrypt from "bcrypt";
-console.log(">>> LLEGÓ AL CONTROLADOR LOGIN <<<");
+
 //endpoint que recibe los datos que enviamos del <form> del login.ejs
 export const loginAdministrador = async (req,res) => {
     try{
@@ -50,29 +50,6 @@ export const loginAdministrador = async (req,res) => {
             email: usuario.email
         }
         res.redirect("/productosAdmin")
-        /*
-        if (match) {
-            //se guarda la sesion
-            req.session.usuario = {
-                id: usuario.id,
-                nombre: usuario.nombre,
-                email: usuario.email
-            }
-            req.session.save(err => {
-                if (err) console.error("ERROR AL GUARDAR SESION:", err);
-                else console.log("SESSION SAVED OK");
-                return res.redirect("/productosAdmin");
-                });
-            //res.redirect("/productosAdmin"); //una vez que se guarda redirecciona al dashboard
-        } else {
-            return res.render("loginAdmin", {
-                titulo: "Login admin",
-                error: "Ups!, contraseña incorrecta",
-                sobre: "Bienvenido al Panel Administrador", 
-                css: "admin/login.css"
-            });
-        }*/
-
     } catch (error) {
         console.log("error en el login: ", error);
         res.status(500).json({

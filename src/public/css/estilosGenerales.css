@@ -252,6 +252,7 @@ select:focus {
     padding: 20px;
     width: 250px;
     height: 50px;
+    margin-top: 5px;
     font-family: "Lexend Exa", sans-serif;
 }
 
@@ -262,7 +263,7 @@ select:focus {
 
 
 .temaOscuro #inputNombreProducto, .temaOscuro #inputPrecioProducto, .temaOscuro #inputImagenProducto, .temaOscuro #inputCategoriaProducto,
-.temaOscuro #inputNombreAdmin, .temaOscuro #inputEmailAdmin, .temaOscuro #inputContraseniaAdmin{
+.temaOscuro #inputNombreAdmin, .temaOscuro #inputEmailAdmin, .temaOscuro #inputContraseniaAdmin, .temaOscuro #inputActivoProducto{
     background-color: black;
     border-color: rgba(255, 255, 255, 0.623); /*un poco mas claro para que no haga tanto contraste*/
     color: white;
