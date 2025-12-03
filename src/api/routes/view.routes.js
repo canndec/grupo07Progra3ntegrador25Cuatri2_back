@@ -20,13 +20,13 @@ router.get("/", (req, res) => {
         css: "admin/login.css"
     });
 }); //// Hola soy santiago, vista del admin es el predeterminado al que va cuando pide la api
-router.get("/productosAdmin", productosAdminView); //productosAdmin trae odo
+router.get("/productosAdmin", requiereLogin, productosAdminView); //productosAdmin trae odo
 
-router.get("/consultarAdmin", consultarAdminView); //vista consulta
-router.get("/crearAdmin", crearProductoView); //vista crear
+router.get("/consultarAdmin", requiereLogin, consultarAdminView); //vista consulta
+router.get("/crearAdmin", requiereLogin, crearProductoView); //vista crear
 
-router.get("/modificarAdmin", modificarAdminView); //vista modificar
-router.get("/eliminarAdmin", eliminarAdminView); //vista eliminar
-router.get("/crearUsuarioAdmin", crearUsuarioAdminView); //hacer un alta de usuario 
+router.get("/modificarAdmin", requiereLogin, modificarAdminView); //vista modificar
+router.get("/eliminarAdmin",requiereLogin, eliminarAdminView); //vista eliminar
+router.get("/crearUsuarioAdmin", requiereLogin, crearUsuarioAdminView); //hacer un alta de usuario 
 
 export default router;

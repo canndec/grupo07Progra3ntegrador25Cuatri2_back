@@ -143,7 +143,7 @@ header {
     filter: invert(100%);
 }
 .temaOscuro #tituloPrincipal, .temaOscuro #botonCrear, .temaOscuro #botonModificar,.temaOscuro  #botonEliminar,.temaOscuro  #botonConsultar,
-.temaOscuro #botonPantallaPrincipal, .temaOscuro #botonCrearAdmin{
+.temaOscuro #botonPantallaPrincipal, .temaOscuro #botonCrearAdmin, .temaOscuro #botonImprimirExcel{
     background-color: var(--violetaTransparente);
     color: white;
 
@@ -242,10 +242,21 @@ select:focus {
 .productoImagen{
     width: 150px;
 }
+.mensajeError {
+    display: flex;
+    justify-self: center;
+    border: 4px solid var(--rojoVaciar);
+    color: var(--rojoVaciar);
+    font-weight: 300;
+    font-size: medium;
+    padding: 20px;
+    width: 250px;
+    height: 50px;
+    font-family: "Lexend Exa", sans-serif;
+}
 
-.temaOscuro .cartaProducto h3, .temaOscuro .cartaProducto p {
+.temaOscuro .cartaUnProducto h3, .temaOscuro .cartaUnProducto p {
     color: white;
-
 }
 
 

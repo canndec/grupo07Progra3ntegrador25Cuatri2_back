@@ -15,9 +15,9 @@ formulario.addEventListener("submit", async (event) => {
     let datos = await response.json();
 
     if(!response.ok){ 
-        alert(datos.message);
-        gridProductos.innerHTML = "";
-        return;
+        //alert(datos.message);
+        gridProductos.innerHTML += "";
+        mostrarError(datos.message,gridProductos);
     }
 
 

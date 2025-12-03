@@ -4,7 +4,8 @@ const router = Router();
 
 
 import { validarPrecio, validarRepetido, validateId,  } from "../middlewares/middlewares.js";
-import {traerTodosLosProductos, traerProductosPorId, crearProducto, actualizarProducto, eliminarProducto} from "../controllers/product.controllers.js";
+import {traerTodosLosProductos, traerProductosPorId, crearProducto, 
+actualizarProducto, eliminarProducto} from "../controllers/product.controllers.js";
 
 console.log("product.routes.js cargado");
 

@@ -1,6 +1,6 @@
 let gridProductos = document.getElementById("gridProductos"); //contenedor de todos los productos
 
-let formulario = document.getElementById("formularioModificar");
+let formulario = document.getElementById("formularioConsultar");
 let url = "http://localhost:3500";
 
 formulario.addEventListener("submit", async (event) => {
