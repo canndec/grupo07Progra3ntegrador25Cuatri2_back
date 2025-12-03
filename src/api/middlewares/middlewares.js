@@ -45,6 +45,8 @@ const validarPrecio = async (req,res,next) => {
 
 // para proteger las vistas si no se hizo login
 const requiereLogin = (req, res, next) => {
+    console.log("entrando al requiere login");
+    console.log("SESION:", req.session.usuario);    
     if(!req.session.usuario) {
         return res.redirect("/");
     }

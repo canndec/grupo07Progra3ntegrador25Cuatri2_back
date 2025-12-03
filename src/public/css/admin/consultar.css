@@ -19,21 +19,6 @@ section{
     border-radius: 40px;
 }
 
-/*
-.mensajeError {
-    display: flex;
-    justify-self: center;
-    border: 4px solid var(--rojoVaciar);
-    color: var(--rojoVaciar);
-    font-weight: 300;
-    font-size: medium;
-    padding: 20px;
-    width: 250px;
-    height: 50px;
-    font-family: "Lexend Exa", sans-serif;
-}
-*/
-
 
 .temaOscuro #formularioConsultar label {
     color: white;

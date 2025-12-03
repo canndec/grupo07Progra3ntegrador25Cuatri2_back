@@ -1,9 +1,10 @@
 import userModels from "../models/user.models.js"; // uso el mismo user models para no crear otro archivo por una sentencia sola
 import bcrypt from "bcrypt";
-
+console.log(">>> LLEGÓ AL CONTROLADOR LOGIN <<<");
 //endpoint que recibe los datos que enviamos del <form> del login.ejs
 export const loginAdministrador = async (req,res) => {
     try{
+        console.log("entrando a loginAdministrador")
         const {email, contrasenia} = req.body; //del form
         if(!email || !contrasenia){
             return res.render("loginAdmin", {
@@ -15,7 +16,7 @@ export const loginAdministrador = async (req,res) => {
         }
 
         //sentencia bcrpt 1
-        const [rows] = await userModels.buscarEmail(email);
+        const [rows] = await userModels.buscarEmail(email); //busca el usuario por email
 
         //si no se recibe nada no encuentra un usuario con ese mail
         if(rows.length === 0){
@@ -33,8 +34,23 @@ export const loginAdministrador = async (req,res) => {
 
         //bycrpt 2 compara consta hasheado si coincide con la bdd
         const match = await bcrypt.compare(contrasenia, usuario.contrasenia)
-        console.log(match); //true o false
+        console.log("hay match contraseñas",match); //true o false
         
+        if(!match){ //si no coincide las contraseñas encriptadas
+            return res.render("loginAdmin", {
+                titulo: "Login Administrador",
+                error: "Ups!, contraseña incorrecta",
+                sobre: "Bienvenido al Panel Administrador",
+                css: "admin/login.css"
+            });
+        }
+        req.session.usuario = { //guardo la sesion
+            id: usuario.id,
+            nombre: usuario.nombre,
+            email: usuario.email
+        }
+        res.redirect("/productosAdmin")
+        /*
         if (match) {
             //se guarda la sesion
             req.session.usuario = {
@@ -42,8 +58,12 @@ export const loginAdministrador = async (req,res) => {
                 nombre: usuario.nombre,
                 email: usuario.email
             }
-            
-            res.redirect("/productosAdmin"); //una vez que se guarda redirecciona al dashboard
+            req.session.save(err => {
+                if (err) console.error("ERROR AL GUARDAR SESION:", err);
+                else console.log("SESSION SAVED OK");
+                return res.redirect("/productosAdmin");
+                });
+            //res.redirect("/productosAdmin"); //una vez que se guarda redirecciona al dashboard
         } else {
             return res.render("loginAdmin", {
                 titulo: "Login admin",
@@ -51,7 +71,7 @@ export const loginAdministrador = async (req,res) => {
                 sobre: "Bienvenido al Panel Administrador", 
                 css: "admin/login.css"
             });
-        }
+        }*/
 
     } catch (error) {
         console.log("error en el login: ", error);
@@ -70,6 +90,6 @@ export const cerrarSesion = (req,res) => {
                 error: "error al cerrar sesion"
             });
         }
-        res.redirect("/");
+        res.redirect("/"); //pantallaprincipl que es el login
     })
 }

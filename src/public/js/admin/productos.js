@@ -67,13 +67,15 @@ function mostrarProductos(array){
             <h3>${p.nombre}</h3>
             <p>Id: ${p.id}</p>
             <p>$${p.precio}</p>
-            <p onclick = cambiarVista()> hay stock</p>  
+            <p> ${hayStock(p.activo)}</p> 
         </div>`).join(""); 
         //aca solo muestra los productos hasta "limite" puesto
     gridProductos.innerHTML = htmlProductos !== "" ? htmlProductos : `<p>No se encontraron productos</p>`;
 }
 
-
+function hayStock(activo){
+    return activo == 1 ? `Disponible` : `No hay stock`;
+}
 //esto es para la paginacion
 let botonAtras = document.getElementById("botonAtras");
 let botonSiguiente = document.getElementById("botonSiguiente");
