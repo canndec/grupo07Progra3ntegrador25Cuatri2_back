@@ -8,7 +8,7 @@ const PORT = environments.port;
 const session_key = environments.session_key;
 import session from "express-session";
 
-import bcrypt from "bcrypt"; 
+//import bcrypt from "bcrypt"; 
 
 import cors from  "cors"; //modulo cors
 
@@ -19,7 +19,7 @@ import { productRoutes, viewRoutes, userRoutes , ventasRoutes, loginRoutes} from
 
 //incorpora la configuacion en el index.js
 import {__dirname, join} from "./src/api/utils/index.js";
-import connection from "./src/api/database/db.js";
+//import connection from "./src/api/database/db.js";
 
 //import session from "express-session";
 
@@ -55,7 +55,7 @@ app.set("views", join(__dirname,"src/views")); //vistas servidas desde la carpet
 // ## RUTAS         
 app.use("/api/productos", productRoutes); //ruta de producto
 app.use("/api/usuarios", userRoutes); // ruta de usuario
-app.use("/api/login", loginRoutes); // ruta para login
+app.use("/", loginRoutes); // ruta para login - PORQUE ES UN FORMULARIO NO USO FETCH SINO SERIA CON /API
 //endpoint que recibe los datos que enviamos del <form> del login.ejs
 /*
 app.post("/loginAdmin", async (req,res) => {

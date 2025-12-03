@@ -5,7 +5,7 @@ section {
     margin-top: 40px;
 }
 
-#formularioModificar {
+#formularioModificar, #formularioModificarActualizado {
     font-family: "Lexend Exa", sans-serif;
     font-size: medium;
     width:40%;
@@ -13,6 +13,20 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+#botonActualizarProducto{
+    margin-top: 20px;
+    margin-inline:43%;
+    background-color: var(--grisVioleta);
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    font-family: "Lexend Exa", sans-serif;
+    cursor: pointer;
+}
+#inputID {    
+    padding: 10px;
+    border-radius: 40px;
 }
 
 .temaOscuro #formularioModificar label {

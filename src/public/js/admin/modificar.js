@@ -32,6 +32,7 @@ formulario.addEventListener("submit", async (event) => {
 
 async function crearFormularioParaActualizar(producto){
     console.table(producto);
+    gridProductos.innerHTML = ""; //para vaciar sino se superpone todo y repite codigo
     let formHTML = `
     <form id="formularioModificarActualizado">
             <input type="hidden" name="id" value="${producto.id}">
@@ -44,7 +45,7 @@ async function crearFormularioParaActualizar(producto){
             <label for="inputImagenProducto">Imagen</label>
             <input id="inputImagenProducto" type="text" name="imagen" value="${producto.imagen}" placeholder="Ingrese la URL del producto" required>
             
-           <label for="inputCategoriaProducto">Categoria</label>
+            <label for="inputCategoriaProducto">Categoria</label>
             <select id="inputCategoriaProducto" name="categoria" required>
                 <option value="consola" ${producto.categoria === 'consola' ? 'selected' : ''}>Consola</option>
                 <option value="juego" ${producto.categoria === 'juego' ? 'selected' : ''}>Juego</option>
