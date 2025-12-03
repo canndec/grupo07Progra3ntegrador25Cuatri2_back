@@ -1,4 +1,5 @@
-/*section del formulario*/
+/* section del formulario */
+
 section {
     display: flex;
     justify-content: center;
@@ -6,16 +7,90 @@ section {
     margin-top: 50px;
 }
 
-
 #formAltaAdmin {
     font-family: "Lexend Exa", sans-serif;
     font-size: medium;
-    width:40%;
+    width: 40%;
     height: 33%;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+
 .temaOscuro #formAltaAdmin label {
     color: white;
+}
+
+/* --- ESTILOS DEL OJO Y CONTRASEÑA --- */
+
+.contenedorInputPassword {
+    position: relative;
+    width: auto;
+    margin: 10px 40px; 
+}
+
+#inputContraseniaAdmin {
+    width: 100%; 
+    box-sizing: border-box; 
+    padding-right: 45px; 
+    margin: 0;
+}
+
+.ojoIcono {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 24px; 
+    height: auto;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.ojoIcono:hover {
+    opacity: 1;
+}
+
+.temaOscuro .ojoIcono {
+    filter: invert(100%); 
+}
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+
+    #formularioCrear, #formAltaAdmin {
+        width: 90%;       
+        height: auto;     
+        margin-top: 20px; 
+        padding: 0;       
+    }
+
+    #formularioCrear input, #formAltaAdmin input,
+    #formularioCrear select, #formAltaAdmin select {
+        width: 100%;    
+        margin: 10px 0 !important; 
+        box-sizing: border-box;    
+    }
+
+    #formAltaAdmin #inputContraseniaAdmin {
+        margin: 0 !important; 
+    }
+
+    .contenedorInputPassword {
+        width: 100%;
+        margin: 10px 0; 
+    }
+
+    #formularioCrear .botonFinal, #formAltaAdmin .botonFinal {
+        margin-inline: 0 !important;
+        width: 100%;    
+        margin-top: 20px;
+    }
+    
+    #formularioCrear label, #formAltaAdmin label {
+        margin-top: 10px;
+        display: block; 
+    }
 }

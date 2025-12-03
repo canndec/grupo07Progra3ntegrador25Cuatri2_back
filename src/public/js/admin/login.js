@@ -8,3 +8,14 @@ accesoRapido.addEventListener("click", () => {
     inputContrasenia.value = "test1" //este ya esta encriptado
 });
 
+// MOSTRAR CONTRASEÑA LUJITO
+let iconoOjo = document.getElementById("iconoOjo");
+iconoOjo.addEventListener("click", () => {
+    if (inputContrasenia.type === "password") {
+        inputContrasenia.type = "text";
+        iconoOjo.src = "img/ojo.png"; 
+    } else {
+        inputContrasenia.type = "password";
+        iconoOjo.src = "img/ojoCerrado.png"; 
+    }
+});

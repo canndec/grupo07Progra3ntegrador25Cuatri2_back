@@ -21,10 +21,13 @@
 
             <label for="emailAdmin">Email</label>
             <input type="text" for="emailAdmin" id="inputEmailAdmin" name="email"  placeholder="Ingrese su email...">
-
+            
             <label for="contraseniaAdmin">Contraseña</label>
-            <input type="password" name="contrasenia" id="inputContraseniaAdmin"   placeholder="Ingrese una contraseña...">
 
+            <div class="contenedorInputPassword">
+            <input type="password" name="contrasenia" id="inputContraseniaAdmin" placeholder="Ingrese una contraseña..." required>
+            <img src="img/ojoCerrado.png" id="ojoContraseniaAdmin" class="ojoIcono" alt="Ver contraseña">
+            </div>
             <input type="submit" class="botonFinal" value="Crear" >
         </form>
     </section>
